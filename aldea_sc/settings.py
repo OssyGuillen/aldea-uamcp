@@ -57,22 +57,22 @@ WSGI_APPLICATION = 'aldea_sc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'dfegmb1cg7i64l',
-#         'USER': 'xygjjzwmiompmc',
-#         'PASSWORD': 'IuzXK7d7orNXGRc9rng4xaQn_a',
-#         'HOST': 'ec2-54-225-117-56.compute-1.amazonaws.com',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3c6pjk9s4fkt6',
+        'USER': 'tlljyijwokyqiu',
+        'PASSWORD': 'lRXJNgjYxvWRUFZ5D-4WWpWeRq',
+        'HOST': 'ec2-54-235-119-29.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
