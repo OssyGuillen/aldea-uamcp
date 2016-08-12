@@ -81,7 +81,7 @@ def authenticate_user(username=None, password=None):
 def login_request(request):
     if request.user.is_authenticated():
         return HttpResponseRedirect(
-            reverse_lazy('vehiculo'))
+            reverse_lazy('register'))
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -94,7 +94,7 @@ def login_request(request):
                 if user:
                     login(request, user)
                     return HttpResponseRedirect(
-                        reverse_lazy('vehiculo'))
+                        reverse_lazy('register'))
                 else:
                     form.add_error(
                         None, "Tu correo o contraseña no son correctos")
