@@ -8,7 +8,6 @@ from django.shortcuts import render_to_response, render, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth import *
 from django.core.urlresolvers import reverse_lazy
-from django.core.mail import EmailMessage
 from django.utils import timezone
 from django.contrib.auth.models import User, Group
 from django.views import generic
@@ -23,9 +22,6 @@ from django.views.defaults import page_not_found
 
 def user_registration(request):
     if request.user.is_authenticated():
-        # We obtain the user group by the user logged.
-        # Sellers will created by agents
-        # Agents will created by admins
         if request.method == 'POST':
             form = UserCreateForm(request.POST)
 
@@ -56,7 +52,7 @@ def user_registration(request):
             form = UserCreateForm()
             context = {'form': form}
             return render_to_response(
-                'templates/registro_usuario.html', context,
+                'registro_usuario.html', context,
                 context_instance=RequestContext(request))
     else:
         return HttpResponseRedirect(
