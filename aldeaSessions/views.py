@@ -12,6 +12,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User, Group
 from django.views import generic
 from aldeaSessions.forms import *
+from aldeaSessions.models import *
 from django.template import Context
 from django.template.loader import get_template
 from django.contrib.auth.tokens import default_token_generator
