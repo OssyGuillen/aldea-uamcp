@@ -59,7 +59,7 @@
 
 
 {% block content %}
-{% if user.groups.all.0.name == 'admin' %}
+{% if user.groups.all.0.name != 'profesional' or user.groups.all.0.name == 'paciente' %}
 <div class="row">
     <div class="col-xs-12">
         <div class="row">
