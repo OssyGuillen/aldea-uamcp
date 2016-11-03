@@ -22,3 +22,7 @@ from django.views.defaults import page_not_found
 
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
+
+
+class DoctorsView(generic.TemplateView):
+    template_name = 'doctors.html'

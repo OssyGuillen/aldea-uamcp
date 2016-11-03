@@ -4,7 +4,13 @@
 <head>
 	<meta charset="UTF-8">
 	{% block title %}<title>Unidad de Autismo - Maternidad Concepción Palacios </title>{% endblock title %}
-	{% block css %}
+	<!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    {% block css %}
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 	{% endblock css %}
 	{% block extracss %}{% endblock extracss %}
@@ -19,26 +25,26 @@
 				<span class="tagline">Experiencias de vida que llenan.</span>
 			</div>
 			<ul>
-				<li class="selected">
-					<a href="index.html">home</a>
+				<li id="index" >
+					<a href="{% url 'home' %}">home</a>
 				</li>
 				<li>
-					<a href="about.html">nosotros</a>
+					<a href="blog.html">noticias</a>
 				</li>
-				<li>
-					<a href="doctors.html">profesionales</a>
-				</li>
-				<li>
-					<a href="services.html">servicios</a>
+				<li id="about">
+					<a href="{% url 'nosotros' %}">nosotros</a>
 				</li>
 				<li>
 					<a href="forms.html">recursos</a>
 				</li>
 				<li>
+					<a href="services.html">preguntas frecuentes</a>
+				</li>
+				<li>
 					<a href="contact.html">contacto</a>
 				</li>
 				<li>
-					<a href="blog.html">blog</a>
+					<a href="blog.html">aldea</a>
 				</li>
 			</ul>
 		</div>
@@ -57,34 +63,29 @@
 					<a href="index.html">home</a>
 				</li>
 				<li>
+					<a href="blog.html">noticias</a>
+				</li>
+				<li>
 					<a href="about.html">nosotros</a>
-				</li>
-				<li>
-					<a href="doctors.html">profesionales</a>
-				</li>
-				<li>
-					<a href="services.html">servicios</a>
 				</li>
 				<li>
 					<a href="forms.html">recursos</a>
 				</li>
 				<li>
+					<a href="services.html">preguntas frecuentes</a>
+				</li>
+				<li>
 					<a href="contact.html">contacto</a>
 				</li>
 				<li>
-					<a href="blog.html">blog</a>
+					<a href="blog.html">aldea</a>
 				</li>
 			</ul>
-			<div>
-				<span>Contáctanos por:</span>
-				<a href="http://freewebsitetemplates.com/go/facebook/" id="facebook">facebook</a>
-				<a href="http://freewebsitetemplates.com/go/twitter/" id="twitter">twitter</a>
-				<a href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">googleplus</a>
-			</div>
 		</div>
 	</div>
 	{% block script %}
-    {% endblock script %}
+	<script src="{% static 'plugins/jQuery/jQuery-2.1.4.min.js' %}"></script>
+	{% endblock script %}
     {% block custom_script %}{% endblock custom_script %}
 </body>
 </html>
