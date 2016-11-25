@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^session/', include('aldeaSessions.urls')),
     url(
-        r'^/$',
+        r'^$',
         HomeView.as_view(),
         name='home'
     ),
