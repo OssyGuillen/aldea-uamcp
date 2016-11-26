@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from views import HomeView, DoctorsView
+from views import HomeView, DoctorsView, PreguntasView, AlimentacionView, RecetasView, LacteosView, GlutenView
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,5 +18,30 @@ urlpatterns = patterns('',
         r'^nosotros/$',
         DoctorsView.as_view(),
         name='nosotros'
+    ),
+    url(
+        r'^preguntas/$',
+        PreguntasView.as_view(),
+        name='preguntas'
+    ),
+    url(
+        r'^recursos/alimentacion/$',
+        AlimentacionView.as_view(),
+        name='alimentacion'
+    ),
+    url(
+        r'^recursos/alimentacion/recetas/$',
+        RecetasView.as_view(),
+        name='recetas'
+    ),
+    url(
+        r'^recursos/alimentacion/gluten/$',
+        GlutenView.as_view(),
+        name='gluten'
+    ),
+    url(
+        r'^recursos/alimentacion/lacteos/$',
+        LacteosView.as_view(),
+        name='lacteos'
     ),
 )

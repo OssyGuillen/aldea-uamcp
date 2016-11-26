@@ -101,6 +101,9 @@ body {
 #header ul li a:hover {
 	color: #ef414a;
 }
+.selected2{
+	background-color: #cecece;
+}
 #body {
 	margin: 0;
 	padding: 28px 0 46px 0;
@@ -821,6 +824,7 @@ body {
 	padding: 37px 19px;
 	width: 272px;
 }
+
 #body #content #sidebar h3 {
 	background: url(../img/dots.gif) no-repeat center bottom;
 	color: #144879;

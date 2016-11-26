@@ -2,7 +2,16 @@
 {% extends "index.html" %}
 
 {% load static %}
-<!-- Website Template by freewebsitetemplates.com -->
+{% block extracss %}
+	<style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+
+{% endblock extracss %}
 {% block content %}
 <div id="body">
 	<div class="header">
@@ -54,31 +63,71 @@
 	</div>
 	<div class="footer">
 		<div>
-			<a href="doctors.html"><img src="{% static 'img/doctors.jpg' %}" alt=""></a>
+			<a href="{% url 'nosotros' %}"><img src="{% static 'img/doctors.jpg' %}" alt=""></a>
 			<h3>nuestros profesionales</h3>
 			<p>
 				Los mejores profesionales capacitados para la atención de cada paciente con trastorno del espectro autista.
 			</p>
 		</div>
 		<div>
-			<a href="services.html"><img src="{% static 'img/what-can-we-do.jpg' %}" alt=""></a>
+			<a href="{% url 'home' %}"><img src="{% static 'img/what-can-we-do.jpg' %}" alt=""></a>
 			<h3>que podemos hacer por ti</h3>
 			<p>
 				Prestamos la mejor atención a todos los pacientes a nivel nacional. Con el personal y las terapias mejores capacitadas.
 			</p>
 		</div>
 		<div>
-			<a href="services.html"><img src="{% static 'img/where-you-can-find.jpg' %}" alt=""></a>
+			<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal"><img id="myImg" src="{% static 'img/where-you-can-find.jpg' %}" alt=""></a>
 			<h3>donde nos puedes encontrar</h3>
 			<p>
-				Ubícanos en el Anexo Negra Matea de la Maternidad Concepción Palacios, en el oeste de la ciudad de Caracas. 
+				Ubícanos en el Anexo Negra Matea de la Maternidad Concepción Palacios, en el oeste de la ciudad de Caracas.
 			</p>
 		</div>
 	</div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      	<div id="map"></div>
+      </div>
+      <div class="modal-footer">
+        <div class="col-xs-9"></div>
+        <div class="col-xs-3 text-right">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 </div>
 {% endblock content %}
 {% block custom_script %}
 <script type="text/javascript">
 	$("#index").addClass('selected');
 </script>
+<script>
+  function initMap() {
+    var mapOptions = {
+	    center: new google.maps.LatLng(10.501000, -66.9464570),
+	    zoom: 15,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  };
+	  var map = new google.maps.Map(document.getElementById("map"),
+	    mapOptions);
+	  var marker = new google.maps.Marker({
+	    position: new google.maps.LatLng(10.4951688, -66.9316006)
+	  });
+	  marker.setMap(map);
+  }
+  $("#myModal").on("shown.bs.modal", function () {
+    google.maps.event.trigger(map, "resize");
+});
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC3M-TWMAaASGrGAZ4jqDsbWt5JPJAY_WA&callback=initMap">
+</script>
+
 {% endblock custom_script %}

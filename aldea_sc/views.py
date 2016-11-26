@@ -26,3 +26,23 @@ class HomeView(generic.TemplateView):
 
 class DoctorsView(generic.TemplateView):
     template_name = 'doctors.html'
+
+
+class PreguntasView(generic.TemplateView):
+    template_name = 'preguntas_frecuentes.html'
+
+
+class AlimentacionView(generic.TemplateView):
+    template_name = 'alimentacion.html'
+
+
+class RecetasView(generic.TemplateView):
+    template_name = 'recetas.html'
+
+
+class GlutenView(generic.TemplateView):
+    template_name = 'gluten.html'
+
+
+class LacteosView(generic.TemplateView):
+    template_name = 'lacteos.html'

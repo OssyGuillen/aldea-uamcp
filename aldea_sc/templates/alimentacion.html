@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+{% extends "index.html" %}
+
+{% load static %}
+{% block extracss %}
+<style type="text/css">
+	p {
+		color: black;
+		text-align: justify;
+	}
+	h5 {
+		color: #ef414a;
+	}
+	h3 {
+		color: #144879;
+	}
+	li {
+		color: black;
+	}
+</style>
+{% endblock extracss %}
+{% block content %}
+	<div id="body">
+		<div id="content">
+			<div id="sidebar">
+				<h3><strong>Alimentación</strong></h3>
+				<ul>
+					<li class="selected">
+						<a href="{% url 'recetas' %}"><strong>Recetas</strong></a>
+					</li>
+					<li class="selected">
+						<a href="{% url 'gluten' %}"><strong>Comer sin Gluten</strong></a>
+					</li>
+					<li class="selected">
+						<a href="{% url 'lacteos' %}"><strong>Comer sin Lácteos</strong></a>
+					</li>
+					<li>
+						<a></a>
+					</li>
+				</ul>
+				<h3><strong>Mas Recursos</strong></h3>
+				<ul>
+					<li class="selected" style="padding-bottom:1px">
+						<a href=""><strong>Enlaces de interés</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href=""><strong>Centros de ayuda</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href=""><strong>Películas</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href=""><strong>¿Primeros 100 días?</strong></a>
+					</li>
+				</ul>
+			</div>
+			<div id="section" style="margin-left: 40px; width:600px; padding-right:0px;">
+				<h2>Alimentación</h2>
+				<p>
+					Diferentes dietas parecen ayudar a algunas personas con trastornos del espectro autista. Una dieta libre de gluten y lacteos parece ser el comienzo en dónde muchas familias exploran la conección entre los problemas gastrointestinales y el comportamiento de los niños y sus dietas. Se afirma que los niños con autismo no absorben los nutrientes de los alimentos porque poseen un intestino permeable y por eso necesitan sobredosis de vitaminas del complejo B, B6, C, E, magnesio, zinc, selenio, taurina, aceite Omega 3 y calcio, entre otros.
+
+					A continuación, se presentan herramientas y tips preparados por nuestros profesionales para mejorar la alimentación de un paciente con trastornos del espectro autista.
+				</p>
+				<ul>
+					<li>
+						<a href="{% url 'recetas' %}" class="figure"><img src="{% static 'img/receta.jpg' %}" alt=""></a>
+						<div style=" width:340px;">
+							<h3><a>Recetas de Cocina</a></h3>
+							<p>
+								Te presentamos muchas recetas especiales con sus ingredientes y modos de preparación.
+							</p>
+							<a href="{% url 'recetas' %}" class="more">Más Info</a>
+						</div>
+					</li>
+					<li>
+						<a href="{% url 'recetas' %}" class="figure"><img src="{% static 'img/gluten.jpg' %}" alt=""></a>
+						<div style=" width:340px;">
+							<h3><a>Comer sin Gluten</a></h3>
+							<p>
+								Aprenda todo lo que tenga que saber del gluten y como sustituirlo.
+							</p>
+							<a href="{% url 'recetas' %}" class="more">Más Info</a>
+						</div>
+					</li>
+					<li>
+						<a href="{% url 'recetas' %}" class="figure"><img src="{% static 'img/lacteos.jpg' %}" alt=""></a>
+						<div style=" width:340px;">
+							<h3><a>Comer sin Lácteos</a></h3>
+							<p>
+								Aprenda todo lo que tenga que saber de los lácteos y como sustituirlo.
+							</p>
+							<a href="{% url 'recetas' %}" class="more">Más Info</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+{% endblock content %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.flotante').slideUp(300);
+			$('.recursos').removeClass('hidden');
+			$('#recursos').addClass('selected');
+			$('#alimentacion').addClass('selected2');
+			$('.flotante').click(function(){
+				$('body, html').animate({
+					scrollTop: '0px'
+				}, 300);
+			});
+
+			$(window).scroll(function(){
+				if( $(this).scrollTop() > 0 ){
+					$('.flotante').slideDown(300);
+				} else {
+					$('.flotante').slideUp(300);
+				}
+			});
+		});
+	</script>
+{% endblock custom_script %}
+</body>
+</html>
