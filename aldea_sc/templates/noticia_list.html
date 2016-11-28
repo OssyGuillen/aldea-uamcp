@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %}<title>Noticias</title>{% endblock title %}
+{% block extracss %}
+<link href="{% static 'plugins/datatables/dataTables.bootstrap.css' %}" rel="stylesheet">
+<style type="text/css">
+	.box {
+        border-top: 3px solid #F3F3F3 !important;
+        border-left: 2px solid #F3F3F3 !important;
+        border-right: 2px solid #F3F3F3 !important;
+        border-bottom: 2px solid #F3F3F3 !important;
+    }
+</style>
+{% endblock extracss %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-xs-12" style="padding-right: 2%;">
+		<div class="box box-default color-palette-box">
+			<div class="box-header">
+				<h3 class="box-title">Noticias</h3>
+			</div>
+			<div class="box-body table-responsive no-padding">
+			  <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+			    <thead>
+				    <tr>
+				    	<th>Titulo</th>
+				    	<th>Categoria</th>
+				    	<th>Autor</th>
+				    	<th>Creación</th>
+				    	<th>Detalles</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+			    {% for noticia in noticias %}
+			    	<tr role="row">
+				      <td> {{ noticia.titulo }}</td>
+				      <td>{{ noticia.categoria }}</td>
+				      <td>{{ noticia.autor }}</td>
+				      <td>{{ noticia.created_at }}</td>
+				      <td>
+				      	<div class="btn-group">
+		                  	  <button type="button" class="btn btn-default">Acción</button>
+		                  	  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			                    <span class="caret"></span>
+			                    <span class="sr-only">Toggle Dropdown</span>
+			                  </button>
+		                  <ul class="dropdown-menu" role="menu">
+		                  	<li><a href="{% url 'eliminar-noticia' noticia.pk %}"><i class="fa fa-edit">  Eliminar</i></a></li>
+		                  </ul>
+		                </div>
+				      </td>
+				    </tr>
+			    {% endfor %}
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				    	<th>Titulo</th>
+				    	<th>Categoria</th>
+				    	<th>Autor</th>
+				    	<th>Creación</th>
+				    	<th>Detalles</th>
+				    </tr>
+			    </tfoot>
+			  </table>
+			</div>
+			<div class="text-center">
+		      <a href="{% url 'noticia' %}" class="btn btn-primary">Crear Nueva </a>
+		    </div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
+
+{% block custom_script %}
+<script>
+	$(document).ready(function(){
+		$(function () {
+	    	$("#example1").DataTable();
+	    	$("#example2").DataTable();
+	    });
+	});
+</script>
+
+{% endblock custom_script %}

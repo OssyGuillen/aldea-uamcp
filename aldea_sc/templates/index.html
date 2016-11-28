@@ -14,6 +14,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{% static 'dist/css/AdminLTE.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+	<link rel="stylesheet" href="{% static 'plugins/flag-icon/css/flag-icon.min.css' %}" type="text/css">
 	<link rel="icon" href="{% static 'img/unidad.ico' %}">
 	{% endblock css %}
 	{% block extracss %}{% endblock extracss %}
@@ -31,8 +32,8 @@
 				<li id="index" >
 					<a href="{% url 'home' %}">home</a>
 				</li>
-				<li>
-					<a href="">noticias</a>
+				<li id="noticias">
+					<a href="{% url 'noticias' %}">noticias</a>
 				</li>
 				<li id="about">
 					<a href="{% url 'nosotros' %}">nosotros</a>
@@ -43,11 +44,11 @@
 				<li id="preguntas">
 					<a href="{% url 'preguntas' %}">preguntas frecuentes</a>
 				</li>
-				<li>
-					<a href="">contacto</a>
+				<li id="contacto">
+					<a href="{% url 'contacto' %}">contacto</a>
 				</li>
 				<li>
-					<a href="">aldea</a>
+					<a href="{% url 'login' %}">aldea</a>
 				</li>
 			</ul>
 		</div>
@@ -59,14 +60,14 @@
 					<li id="alimentacion">
 						<a href="{% url 'alimentacion' %}">Alimentación</a>
 					</li>
-					<li>
-						<a href="#">Enlaces de Interés</a>
+					<li id="enlaces">
+						<a href="{% url 'enlaces' %}">Enlaces de Interés</a>
 					</li>
-					<li>
-						<a href="#">Centros de Ayuda</a>
+					<li id="centros">
+						<a href="{% url 'centros' %}">Centros de Ayuda</a>
 					</li>
-					<li>
-						<a href="#">Películas</a>
+					<li id="peliculas">
+						<a href="{% url 'peliculas' %}">Películas</a>
 					</li>
 				</ul>
 			</div>

@@ -19,6 +19,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.views.decorators.csrf import csrf_protect
 from django.template.response import TemplateResponse
 from django.views.defaults import page_not_found
+from django.views.generic import *
 
 
 def user_registration(request):
@@ -160,3 +161,44 @@ def password_reset(request, is_admin_site=False,
         context.update(extra_context)
     return TemplateResponse(request, template_name, context,
                             current_app=current_app)
+
+
+class NoticiaView(generic.CreateView):
+    template_name = "noticia.html"
+    form_class = NoticiaForm
+
+    def get(self, request, *args, **kwargs):
+        self.object = None
+        context = self.get_context_data(**kwargs)
+        context['form'] = NoticiaForm
+        return self.render_to_response(context)
+
+    def post(self, request, *args, **kwargs):
+        form = NoticiaForm(request.POST, request.FILES)
+        if form.is_valid():
+            noticia = form.save()
+            noticia.user = request.user
+            noticia.save()
+            return HttpResponseRedirect(
+                reverse_lazy('noticias_list'))
+        else:
+            return render(request, self.template_name, {'form': form})
+
+
+class NoticiaListView(ListView):
+    template_name = 'noticia_list.html'
+    model = Noticia
+
+    def get(self, request, *args, **kwargs):
+        self.object_list = []
+        context = super(
+            NoticiaListView, self).get_context_data(**kwargs)
+        noticias = Noticia.objects.all()
+        context['noticias'] = noticias
+        return self.render_to_response(context)
+
+
+def eliminarNoticia(request, id):
+    noticia = Noticia.objects.get(pk=id)
+    noticia.delete()
+    return HttpResponseRedirect(reverse_lazy('noticias_list'))

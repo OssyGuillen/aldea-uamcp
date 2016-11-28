@@ -17,6 +17,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.views.decorators.csrf import csrf_protect
 from django.template.response import TemplateResponse
 from django.views.defaults import page_not_found
+from aldeaSessions.models import Noticia
 
 
 
@@ -46,3 +47,35 @@ class GlutenView(generic.TemplateView):
 
 class LacteosView(generic.TemplateView):
     template_name = 'lacteos.html'
+
+
+class EnlacesView(generic.TemplateView):
+    template_name = 'enlaces.html'
+
+
+class CentrosView(generic.TemplateView):
+    template_name = 'centros.html'
+
+
+class PeliculasView(generic.TemplateView):
+    template_name = 'peliculas.html'
+
+
+class ManualView(generic.TemplateView):
+    template_name = 'manual.html'
+
+
+class ContactoView(generic.TemplateView):
+    template_name = 'contact.html'
+
+
+class NoticiasView(generic.TemplateView):
+    template_name = 'blog.html'
+
+    def get(self, request, *args, **kwargs):
+        self.object_list = []
+        context = super(
+            NoticiasView, self).get_context_data(**kwargs)
+        noticias = Noticia.objects.all()
+        context['noticias'] = noticias
+        return self.render_to_response(context)

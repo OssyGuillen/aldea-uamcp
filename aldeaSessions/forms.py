@@ -13,6 +13,7 @@ from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from random import choice
 from string import ascii_lowercase, digits
+from aldeaSessions.models import Noticia
 
 
 def generate_random_username(length=16, chars=ascii_lowercase + digits, split=4, delimiter='-'):
@@ -77,6 +78,7 @@ class PasswordResetForm(forms.Form):
 
 
 class UserCreateForm(forms.ModelForm):
+    password = forms.CharField(label='Contraseña', required=True)
 
     class Meta:
         model = User
@@ -113,8 +115,8 @@ class UserCreateForm(forms.ModelForm):
         user = super(UserCreateForm, self).save(commit=False)
         user.email = self.cleaned_data['email']
         user.username = generate_random_username()
-        user.is_active = 0
-        password = User.objects.make_random_password()
+        user.is_active = 1
+        password = self.cleaned_data['password']
         user.set_password(password)
         user.save()
         return user
@@ -128,3 +130,26 @@ class LoginForm(forms.Form):
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'placeholder': 'Clave'}), required=True, label='')
+
+
+class NoticiaForm(forms.ModelForm):
+    class Meta:
+        model = Noticia
+        exclude = ['user',]
+        labels = {
+            'autor': 'Autor',
+            'titulo': 'Titulo',
+            'categoria': 'Categoria',
+            'parrafo': 'Parrafo',
+        }
+        widgets = {
+            'parrafo': forms.Textarea(attrs={'cols': 80, 'rows': 20}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(NoticiaForm, self).__init__(*args, **kwargs)
+        self.fields['imagen'].required = False
+
+    def save(self):
+        noticia = super(NoticiaForm, self).save()
+        return noticia

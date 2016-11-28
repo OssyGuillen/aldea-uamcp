@@ -59,4 +59,19 @@ urlpatterns = patterns(
             'next_page': '/'
         },
         name='logout'),
+    url(
+        r'^noticia/nueva/$',
+        NoticiaView.as_view(),
+        name='noticia'
+    ),
+    url(
+        r'^noticia/lista/$',
+        NoticiaListView.as_view(),
+        name='noticias_list'
+    ),
+    url(
+        r'^noticia/eliminar/(?P<id>\d+)$',
+        'aldeaSessions.views.eliminarNoticia',
+        name='eliminar-noticia'
+    ),
 )

@@ -1,6 +1,9 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from views import HomeView, DoctorsView, PreguntasView, AlimentacionView, RecetasView, LacteosView, GlutenView
+from views import HomeView, DoctorsView, PreguntasView, AlimentacionView, RecetasView, LacteosView, GlutenView, EnlacesView, CentrosView, PeliculasView, ManualView, ContactoView, NoticiasView
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 
 urlpatterns = patterns('',
     # Examples:
@@ -44,4 +47,38 @@ urlpatterns = patterns('',
         LacteosView.as_view(),
         name='lacteos'
     ),
+    url(
+        r'^recursos/enlaces/$',
+        EnlacesView.as_view(),
+        name='enlaces'
+    ),
+    url(
+        r'^recursos/centros/$',
+        CentrosView.as_view(),
+        name='centros'
+    ),
+    url(
+        r'^recursos/peliculas/$',
+        PeliculasView.as_view(),
+        name='peliculas'
+    ),
+    url(
+        r'^recursos/manual/$',
+        ManualView.as_view(),
+        name='manual'
+    ),
+    url(
+        r'^contacto/$',
+        ContactoView.as_view(),
+        name='contacto'
+    ),
+    url(
+        r'^noticias/$',
+        NoticiasView.as_view(),
+        name='noticias'
+    ),
 )
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

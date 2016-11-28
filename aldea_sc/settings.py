@@ -148,3 +148,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "aldea_sc/static"),
 )
+
+MEDIA_ROOT='media/'
+MEDIA_URL='/media/'
