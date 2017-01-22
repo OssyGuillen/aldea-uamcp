@@ -79,3 +79,7 @@ class NoticiasView(generic.TemplateView):
         noticias = Noticia.objects.all()
         context['noticias'] = noticias
         return self.render_to_response(context)
+
+
+class AldeaView(generic.TemplateView):
+    template_name = 'base_aldea.html'
