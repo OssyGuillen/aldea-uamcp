@@ -140,10 +140,10 @@ class NoticiaForm(forms.ModelForm):
             'autor': 'Autor',
             'titulo': 'Titulo',
             'categoria': 'Categoria',
-            'parrafo': 'Parrafo',
+            'text': 'Text',
         }
         widgets = {
-            'parrafo': forms.Textarea(attrs={'cols': 80, 'rows': 20}),
+            'text': forms.Textarea(attrs={'cols': 80, 'rows': 20}),
         }
 
     def __init__(self, *args, **kwargs):

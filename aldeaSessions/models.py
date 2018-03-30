@@ -21,6 +21,10 @@ class Noticia(models.Model):
 	autor = models.CharField(max_length=100, default="Dra. Ana Cecilia Marquez")
 	categoria = models.CharField(max_length=100, default="General")
 	titulo = models.CharField(max_length=100, default="")
-	parrafo = models.CharField(max_length=2000, default="")
+	text = models.TextField(default="")
+	# parrafo = models.CharField(max_length=2000, default="")
 	created_at = models.DateTimeField(auto_now_add=True)
 	modified_at = models.DateTimeField(auto_now_add=True)
+
+	class Meta:
+		ordering = ['-created_at',]

@@ -195,6 +195,7 @@ class NoticiaListView(ListView):
             NoticiaListView, self).get_context_data(**kwargs)
         noticias = Noticia.objects.all()
         context['noticias'] = noticias
+        print("Image:" + noticia.image)
         return self.render_to_response(context)
 
 

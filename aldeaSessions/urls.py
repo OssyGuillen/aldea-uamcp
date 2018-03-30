@@ -73,5 +73,5 @@ urlpatterns = patterns(
         r'^noticia/eliminar/(?P<id>\d+)$',
         'aldeaSessions.views.eliminarNoticia',
         name='eliminar-noticia'
-    ),
+    )
 )

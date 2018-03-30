@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from views import HomeView, DoctorsView, PreguntasView, AlimentacionView, RecetasView, LacteosView, GlutenView, EnlacesView, CentrosView, PeliculasView, ManualView, ContactoView, NoticiasView, AldeaView
+from views import HomeView, DoctorsView, PreguntasView, AlimentacionView, RecetasView, LacteosView, GlutenView, EnlacesView, CentrosView, PeliculasView, ManualView, ContactoView, NoticiasView, AldeaView, LibroView
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
@@ -68,6 +68,11 @@ urlpatterns = patterns('',
         name='manual'
     ),
     url(
+        r'^recursos/libro/$',
+        LibroView.as_view(),
+        name='libro'
+    ),
+    url(
         r'^contacto/$',
         ContactoView.as_view(),
         name='contacto'
@@ -81,7 +86,7 @@ urlpatterns = patterns('',
         r'^aldea/$',
         AldeaView.as_view(),
         name='aldea'
-    ),
+    )
 )
 
 urlpatterns += staticfiles_urlpatterns()

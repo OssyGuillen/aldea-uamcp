@@ -2,6 +2,7 @@
 {% extends "index.html" %}
 
 {% load static %}
+{% load responsive_images %}
 {% block extracss %}
 <style type="text/css">
 	p {
@@ -18,10 +19,15 @@
 				{% for noticia in noticias %}
 				<div>
 					<h2>{{noticia.titulo}}.</h2><b>autor: {{noticia.autor}} - categoria: {{noticia.categoria}}</b><br><br>
-					<img src="../../media/images/noticias/anexo.png" alt="" width="569" height="252"> <span>publicado: {{noticia.created_at}} </span>
+					<!-- <img src="{% static '' %}{{noticia.imagen}}" alt="" width="569" height="500"> -->
+					<img src="{% static '' %}{{noticia.imagen}}" alt="" width="500">
+					<span>publicado: {{noticia.created_at}} </span>
+					<br>
+					<br>
 					<p>
-						<br>
-						{{noticia.parrafo}}
+						{% with text=noticia.text|urlize%}
+							{{text|linebreaksbr }}
+						{% endwith %}
 					</p>
 					<hr>
 				</div>

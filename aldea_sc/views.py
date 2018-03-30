@@ -20,7 +20,6 @@ from django.views.defaults import page_not_found
 from aldeaSessions.models import Noticia
 
 
-
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
 
@@ -64,6 +63,8 @@ class PeliculasView(generic.TemplateView):
 class ManualView(generic.TemplateView):
     template_name = 'manual.html'
 
+class LibroView(generic.TemplateView):
+    template_name = 'libro.html'
 
 class ContactoView(generic.TemplateView):
     template_name = 'contact.html'
@@ -79,7 +80,6 @@ class NoticiasView(generic.TemplateView):
         noticias = Noticia.objects.all()
         context['noticias'] = noticias
         return self.render_to_response(context)
-
 
 class AldeaView(generic.TemplateView):
     template_name = 'base_aldea.html'

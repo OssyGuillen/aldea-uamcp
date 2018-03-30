@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'aldeaSessions',
     'bootstrap3',
+    'responsive_images',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -149,5 +150,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "aldea_sc/static"),
 )
 
-MEDIA_ROOT='media/'
+MEDIA_ROOT='aldea_sc/static'
 MEDIA_URL='/media/'
