@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'aldeaSessions',
     'bootstrap3',
-    'responsive_images',
 )
 
 MIDDLEWARE_CLASSES = (
