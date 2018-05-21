@@ -1,0 +1,141 @@
+{% extends "blog/alimentacion.html" %}
+{% load static %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.recursos').removeClass('hidden');
+			$('.gluten').removeClass('hidden');
+			$('#recursos').addClass('selected');
+			$('#alimentacion').addClass('selected2');
+		});
+	</script>
+{% endblock custom_script %}
+{% block body %}
+			<h2>Comer sin gluten</h2>
+			<img src="{% static 'img/gluten2.jpg' %}" alt="">
+			<p>
+				Cuando le dicen que su hijo con trastorno del espectro autista es alérgico a ciertos alimentos y aditivos químicos, eliminar el gluten puede parecer imposible. Cumplir con una lista larga de "alimentos prohibidos" resulta una tarea cuesta arriba para la familia, pues para lograr que el niño esté libre de estas toxinas es importante que todos los integrantes del grupo familiar sigan la dieta como ejempo y como técnica de apoyo.
+			</p>
+			<div id="con-gluten">
+				<div>
+					<h2>Alimentos que pueden contener gluten</h2>
+					<br>
+					<p>
+						Entre los granos que contienen gluten se encuentran:<br>
+						Trigo, Spelt,<br>
+						Kamut, Centeno,<br>
+						Triticale, Cebada,<br>
+						Avena, Alfalfa,<br>
+						<br>
+						Y derivados de estos:
+						<br>
+						<br>
+						-Panes<br>
+						-Harinas<br>
+						-Pasteles<br>
+						-Galletas<br>
+						-Bizcochos<br>
+						-Masas<br>
+						-Otros productos de panadería y pastelería<br>
+						-Pizza<br>
+						-Pastas de sémola<br>
+						-Leches malteadas o achocolatadas<br>
+						-Polvos para bebidas instatáneas<br>
+						-Vinagre de trigo<br>
+						-Infusiones o bebidas preparadas con los cereales anteriores
+					</p>
+				</div>
+				<div>
+					<h2>Alimentos procesados que podrían contener gluten</h2>
+					<br>
+					<p>
+						-Papas fritas congeladas<br>
+						-Aderezos para ensaladas<br>
+						-Salsas<br>
+						-Atún<br>
+						-Helado<br>
+						-Pasta de tomate<br>
+						-Productos que contienen vinagre: ketchup o mostaza<br>
+						-Café instantáneo<br>
+						-Levadura pre-empacada<br>
+						-Azúcar para nevar (usualmente también contiene maíz)<br>
+						-Sirimi/imitación de carne de cangrejo (contiene un aglutinante de almidón)<br>
+						-Sabores y extractos<br>
+						-Especias comerciales molidas<br>
+						-Vitaminas<br>
+						-Medicinas: OTC o por prescripción<br>
+						-Caramelos, Chicles<br>
+						-Condimentos<br>
+						-Sobres<br>
+						-Plastilina (Playdough)<br>
+						-Goma de pegar escolar
+					</p>
+				</div>
+			</div>
+			<div>
+				<h2>aditivos que contienen gluten</h2>
+				<br>
+				<div>
+					<p>
+						-Malta, cebada malteada, sabor de malta<br>
+						-Glutamato monosódico (MSG)<br>
+						-Proteína vegetal hidrolizada<br>
+						-Vinagre destilado
+					</p>
+				</div>
+				<div>
+					<p>
+						-Jarabe de arroz<br>
+						-Sabores naturales y artificiales<br>
+						-Color de caramelo<br>
+						-Dextrina
+					</p>
+				</div>
+			</div>
+			<div>
+				<p>
+					Adicionalmente, algunas personas presentan reacciones a los siguientes granos, que son generalmente considerados como libres de gluten. Esta puede ser debida a una contaminación por el lado del proveedor, a contaminación en la tienda, o a una alergia alimentaria. Individualmente se deberá determinar si estos granos son seguros o no para el consumo. Al igual que con la introducción de cualquier alimento, se debe ir poco a poco y añadir sólo un alimento a la vez.
+				</p>
+				<br>
+				<div>
+					<p>
+						-Amaranto Sorgo (jowar)<br>
+						-Buckwheat (kasha) Arroz salvaje
+					</p>
+				</div>
+				<div>
+					<p>
+						-Millo (millet) Lágrimas de Job (Job’s tears)<br>
+						-Teff Quinoa
+					</p>
+				</div>
+				<br>
+			</div>
+			<div id="sin-gluten">
+				<h2>Granos sin gluten y Harinas alternativas:</h2>
+				<br>
+				<div>
+					<p>
+						-Arroz blanco<br>
+						-Arroz integral<br>
+						-Arroz dulce Tapioca (cassava)<br>
+						-Fécula de patata<br>
+						-Garbanzos<br>
+						-Lentejas<br>
+						-Maíz<br>
+						-Harinas de frijoles
+					</p>
+				</div>
+				<div>
+					<p>
+						-Plátano<br>
+						-Yuca<br>
+						-Amaranto<br>
+						-Sorgo<br>
+						-Mijo<br>
+						-Almendra<br>
+						-Algarrobo<br>
+						-Castaña
+					</p>
+				</div>
+			</div>{% endblock body %}

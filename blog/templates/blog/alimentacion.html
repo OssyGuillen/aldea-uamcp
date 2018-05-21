@@ -1,0 +1,132 @@
+{% extends "blog/index.html" %}
+{% load static %}
+{% block extracss %}
+	<style type="text/css">
+	p {
+		color: black;
+		text-align: justify;
+	}
+	li {
+		color: black;
+	}
+	</style>
+{% endblock extracss %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.recursos').removeClass('hidden');
+			$('#recursos').addClass('selected');
+			$('#alimentacion').addClass('selected2');
+		});
+	</script>
+{% endblock custom_script %}
+{% block content %}
+		<div id="content">
+			<div id="sidebar">
+				<h3><strong>Alimentación</strong></h3>
+				<ul>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'recetas' %}"><strong>Recetas</strong></a>
+						<ul class="hidden recetas">
+							<li><a href="#itm01">Mezcla para hacer pan</a></li>
+							<li><a href="#itm02">Torta blanca sin gluten</a></li>
+							<li><a href="#itm03">Leche de almendras</a></li>
+							<li><a href="#itm04">Leche de Coco</a></li>
+							<li><a href="#itm05">Leche de Arróz</a></li>
+							<li><a href="#itm06">Leche de Ajonjolí</a></li>
+							<li><a href="#itm07">Crema de Cheez Whizz</a></li>
+							<li><a href="#itm08">Mantequilla clarificada</a></li>
+							<li><a href="#itm09">Buñuelos de apio</a></li>
+							<li><a href="#itm10">Tortillas de papa</a></li>
+							<li><a href="#itm11">Yuca con mojito</a></li>
+							<li><a href="#itm12">Chicha de ocumo chino</a></li>
+							<li><a href="#itm13">Arepas dulces</a></li>
+							<li><a href="#itm14">Bollos pelones</a></li>
+							<li><a href="#itm15">Flan de arróz</a></li>
+							<li><a href="#itm16">Suspiros de coco</a></li>
+							<li><a href="#itm17">Mezcla para panquecas</a></li>
+							<li><a href="#itm18">Arepas de yuca</a></li>
+						</ul>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'gluten' %}"><strong>Comer sin Gluten</strong></a>
+						<ul class="hidden gluten">
+							<li><a href="#con-gluten">Alimentos con Gluten</a></li>
+							<li><a href="#sin-gluten">Alimentos sin Gluten</a></li>
+						</ul>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'lacteos' %}"><strong>Comer sin Lácteos</strong></a>
+						<ul class="hidden lacteos">
+							<li><a href="#lacteos">Con/Sin Lácteos</a></li>
+						</ul>
+					</li>
+				</ul>
+				<br>
+				<br>
+				<h3><strong>Más Recursos</strong></h3>
+				<ul>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'peliculas' %}"><strong>Películas</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'centros' %}"><strong>Centros de ayuda</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'enlaces' %}"><strong>Enlaces de interés</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'manual' %}"><strong>¿Primeros 100 días?</strong></a>
+					</li>
+					<li class="selected" style="padding-bottom:1px">
+						<a href="{% url 'libro' %}"><strong>El Autismo en mi Vida (Libro)</strong></a>
+					</li>
+				</ul>
+			</div>
+			<div id="section" style="margin-left: 40px; width:600px; padding-right:0px;">{% block body %}
+				<h2>Alimentación</h2>
+				<p>
+					Diferentes dietas parecen ayudar a algunas personas con trastornos del espectro autista. Una dieta libre de gluten y lacteos parece ser el comienzo en dónde muchas familias exploran la conección entre los problemas gastrointestinales y el comportamiento de los niños y sus dietas. Se afirma que los niños con autismo no absorben los nutrientes de los alimentos porque poseen un intestino permeable y por eso necesitan sobredosis de vitaminas del complejo B, B6, C, E, magnesio, zinc, selenio, taurina, aceite Omega 3 y calcio, entre otros.
+
+					A continuación, se presentan herramientas y tips preparados por nuestros profesionales para mejorar la alimentación de un paciente con trastornos del espectro autista.
+				</p>
+				<ul>
+					<li>
+						<a href="{% url 'recetas' %}" class="figure">
+							<img src="{% static 'img/receta.jpg' %}" alt="">
+						</a>
+						<div style="width: 340px;">
+							<h3><a>Recetas de Cocina</a></h3>
+							<p>
+								Te presentamos muchas recetas especiales con sus ingredientes y modos de preparación.
+							</p>
+							<a href="{% url 'recetas' %}" class="more">Más Info</a>
+						</div>
+					</li>
+					<li>
+						<a href="{% url 'gluten' %}" class="figure">
+							<img src="{% static 'img/gluten.jpg' %}" alt="">
+						</a>
+						<div style="width: 340px;">
+							<h3><a>Comer sin Gluten</a></h3>
+							<p>
+								Aprenda todo lo que tenga que saber del gluten y como sustituirlo.
+							</p>
+							<a href="{% url 'gluten' %}" class="more">Más Info</a>
+						</div>
+					</li>
+					<li>
+						<a href="{% url 'lacteos' %}" class="figure">
+							<img src="{% static 'img/lacteos.jpg' %}" alt="">
+						</a>
+						<div style="width: 340px;">
+							<h3><a>Comer sin Lácteos</a></h3>
+							<p>
+								Aprenda todo lo que tenga que saber de los lácteos y como sustituirlo.
+							</p>
+							<a href="{% url 'lacteos' %}" class="more">Más Info</a>
+						</div>
+					</li>
+				</ul>{% endblock body %}
+			</div>
+		</div>{% endblock content %}

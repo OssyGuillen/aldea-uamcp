@@ -1,0 +1,48 @@
+{% extends "blog/alimentacion.html" %}
+{% load static %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.recursos').removeClass('hidden');
+			$('.lacteos').removeClass('hidden');
+			$('#recursos').addClass('selected');
+			$('#alimentacion').addClass('selected2');
+		});
+	</script>
+{% endblock custom_script %}
+{% block body %}
+			<h2>Comer sin lácteos</h2>
+			<img src="{% static 'img/lacteos2.jpg' %}" alt="">
+			<p>
+				Cuando le dicen que su hijo con trastorno del espectro autista es alérgico a ciertos alimentos y aditivos químicos, eliminar los lácteos puede parecer imposible. Cumplir con una lista larga de "alimentos prohibidos" resulta una tarea cuesta arriba para la familia, pues para lograr que el niño esté libre de estas toxinas es importante que todos los integrantes del grupo familiar sigan la dieta como ejempo y como técnica de apoyo.
+			</p>
+			<div id="lacteos">
+				<div>
+					<h2>Ingredientes que contienen lácteos</h2>
+					<br>
+					<p>
+						- Leche de cabra, en polvo y descremada<br>
+						- Mantequilla, Queso<br>
+						- Lactosa<br>
+						- Yogurt, Suero<br>
+						- Caseína, caseinato
+					</p>
+				</div>
+				<div>
+					<h2>Sustitutos seguros de la leche</h2>
+					<br>
+					<p>
+						- Leche de Almendras <br>
+						- Leche de arroz (chequear)<br>
+						- Leche de Patata ("Darifree")<br>
+						- Leches de nueces (chequear ingredientes)<br>
+						- Leche de Ajonjolí
+					</p>
+				</div>
+			</div>
+			<br>
+			<div>
+				<p><strong>
+					Los huevos no contienen lácteos, pero la mayonesa y otros productos con huevos pueden contener gluten. Chequear con el fabricante.
+				</strong></p>
+			</div>{% endblock body %}

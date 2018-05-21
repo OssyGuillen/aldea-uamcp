@@ -1,0 +1,74 @@
+{% extends "blog/alimentacion.html" %}
+{% load static %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.recursos').removeClass('hidden');
+			$('#recursos').addClass('selected');
+			$('#peliculas').addClass('selected2');
+		});
+	</script>
+{% endblock custom_script %}
+{% block body %}
+			<h2>PELÍCULAS DEL ASPERGER</h2>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p1.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p2.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p3.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p4.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p5.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p6.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p7.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p8.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p9.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p10.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p11.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p12.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p13.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p14.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p15.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p16.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p17.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p18.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p19.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p20.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p21.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p22.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p23.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p24.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p25.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p26.jpg' %}"></td>
+					</tr>
+					<tr>
+						<td style="padding:8px;"><img src="{% static 'img/p27.jpg' %}"></td>
+						<td style="padding:8px;"><img src="{% static 'img/p28.jpg' %}"></td>
+					</tr>
+				</tbody>
+			</table>
+{% endblock body %}

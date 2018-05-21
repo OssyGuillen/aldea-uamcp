@@ -1,0 +1,35 @@
+{% extends "blog/body.html" %}
+{% load static %}
+{% block extracss %}
+	<style type="text/css">
+	p {
+		color: black;
+		text-align: justify;
+	}
+	</style>
+{% endblock extracss %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#noticias").addClass('selected');
+		});
+	</script>
+{% endblock custom_script %}
+{% block body %}
+				<h2>noticias</h2>{% for noticia in noticias %}
+				<hr>
+				<div style="padding-top:0;">
+					<h2>{{noticia.titulo}}.</h2>
+					<b>autor: {{noticia.autor}} - categoria: {{noticia.categoria}}</b>
+					<br>
+					<br>
+					<img src="{% static '' %}{{noticia.imagen}}" alt="" width="500">
+					<span>publicado: {{noticia.created_at}}</span>
+					<br>
+					<br>
+					<p>
+						{% with text=noticia.text|urlize%}
+							{{text|linebreaksbr }}
+						{% endwith %}
+					</p>
+				</div>{% endfor %}{% endblock body %}
