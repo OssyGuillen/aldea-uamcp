@@ -1,4 +1,4 @@
-{% extends "blog/index.html" %}
+{% extends "blog/body.html" %}
 {% load static %}
 {% block extracss %}
 	<style type="text/css">
@@ -93,7 +93,7 @@
 				<ul>
 					<li>
 						<a href="{% url 'recetas' %}" class="figure">
-							<img src="{% static 'img/receta.jpg' %}" alt="">
+							<img src="{% static 'images/alimentacion_recetas.jpg' %}" alt="">
 						</a>
 						<div style="width: 340px;">
 							<h3><a>Recetas de Cocina</a></h3>
@@ -105,7 +105,7 @@
 					</li>
 					<li>
 						<a href="{% url 'gluten' %}" class="figure">
-							<img src="{% static 'img/gluten.jpg' %}" alt="">
+							<img src="{% static 'images/alimentacion_gluten.jpg' %}" alt="">
 						</a>
 						<div style="width: 340px;">
 							<h3><a>Comer sin Gluten</a></h3>
@@ -117,7 +117,7 @@
 					</li>
 					<li>
 						<a href="{% url 'lacteos' %}" class="figure">
-							<img src="{% static 'img/lacteos.jpg' %}" alt="">
+							<img src="{% static 'images/alimentacion_lacteos.jpg' %}" alt="">
 						</a>
 						<div style="width: 340px;">
 							<h3><a>Comer sin Lácteos</a></h3>

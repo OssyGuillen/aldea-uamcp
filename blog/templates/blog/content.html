@@ -1,0 +1,28 @@
+{% extends "blog/body.html" %}
+
+{% block content %}
+		<div class="content">
+			<div id="section" style="box-sizing: initial;">{% block body %}{% endblock body %}
+			</div>
+			<div id="sidebar">
+				<div class="contact">
+					<h3>Contacto</h3>
+					<ul class="first">
+						<li class="office">
+							<b>caracas</b><span style="text-align:justify;">Avenida San Martín, Edificio "Negra Matea", anexo a la Maternidad Concepción Palacios, piso 1, Unidad de Alto Riesgo Neurológico. Metro Maternidad. Distrito Capital, VENEZUELA.</span>
+						</li>
+						<li class="telephone">
+							+58 212 451 5955
+						</li>
+						<li class="email">
+							<a href="mailto:uautismomcp@gmail.com">uautismomcp@gmail.com</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<h3>horas de trabajo</h3>
+					<span>Lunes - Viernes<br>7:00 a.m. - 4:30 p.m.</span>
+					<span>Sábados - Domingos<br>CERRADO</span>
+				</div>
+			</div>
+		</div>{% endblock content %}

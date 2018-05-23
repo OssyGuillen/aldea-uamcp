@@ -1,28 +1,126 @@
-{% extends "blog/index.html" %}
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}Unidad de Autismo - Maternidad Concepción Palacios{% endblock title %}</title>
+	<link rel="icon" href="{% static 'img/unidad.ico' %}">
 
-{% block content %}
-		<div class="content">
-			<div id="section" style="margin-right: 40px;">{% block body %}{% endblock body %}
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Theme style -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+	<!--[if IE 7]>
+		<link rel="stylesheet" href="{% static 'css/ie7.css' %}" type="text/css">
+	<![endif]-->
+{% block extrahead %}{% endblock extrahead %}
+{% block extracss %}{% endblock extracss %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#recursos').click(function() {
+				$('.recursos').removeClass('hidden');
+				$('#recursos').addClass('selected');
+				$('#index').removeClass('selected');
+			});
+		});
+	</script>
+{% block custom_script %}{% endblock custom_script %}
+</head>
+<body>
+	<div id="header">
+		<div>
+			<div>
+				<span style="box-sizing: initial;"></span>
+				<a href="{% url 'inicio' %}" class="logo"><img src="{% static 'images/unidad.png' %}" alt=""></a>
 			</div>
-			<div id="sidebar">
-				<div class="contact">
-					<h3>Contacto</h3>
-					<ul class="first">
-						<li class="office">
-							<b>caracas</b><span style="text-align:justify;">Avenida San Martín, Edificio "Negra Matea", anexo a la Maternidad Concepción Palacios, piso 1, Unidad de Alto Riesgo Neurológico. Metro Maternidad. Distrito Capital, VENEZUELA.</span>
-						</li>
-						<li class="telephone">
-							+58 212 451 5955
-						</li>
-						<li class="email">
-							<a href="mailto:uautismomcp@gmail.com">uautismomcp@gmail.com</a>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h3>horas de trabajo</h3>
-					<span>Lunes - Viernes<br>7:00 a.m. - 4:30 p.m.</span>
-					<span>Sábados - Domingos<br>CERRADO</span>
-				</div>
+			<ul>
+				<li id="inicio">
+					<a href="{% url 'inicio' %}">inicio</a>
+				</li>
+				<li id="nosotros">
+					<a href="{% url 'nosotros' %}">nosotros</a>
+				</li>
+				<li id="noticias">
+					<a href="{% url 'noticias' %}">noticias</a>
+				</li>
+				<li id="recursos">
+					<a href="javascript:void(0);">recursos</a>
+				</li>
+				<li id="preguntas">
+					<a href="{% url 'preguntas' %}">preguntas frecuentes</a>
+				</li>
+				<li id="contacto">
+					<a href="{% url 'contacto' %}">contacto</a>
+				</li>
+				<li id="aldea">
+					<a href="{% url 'aldea' %}">aldea</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="body">
+		<div class="header recursos hidden" style="background: none; padding: 0;">
+			<div>
+				<div style="padding: 40px 0;"></div>
+				<ul>
+					<li id="alimentacion">
+						<a href="{% url 'alimentacion' %}">Alimentación</a>
+					</li>
+					<li id="peliculas">
+						<a href="{% url 'peliculas' %}">Películas</a>
+					</li>
+					<li id="centros">
+						<a href="{% url 'centros' %}">Centros de Ayuda</a>
+					</li>
+					<li id="enlaces">
+						<a href="{% url 'enlaces' %}">Enlaces de Interés</a>
+					</li>
+				</ul>
 			</div>
-		</div>{% endblock content %}
+		</div>{% block content %}{% endblock content %}
+	</div>
+	<div id="footer">
+		<div>
+			<p>
+				Copyright &copy; Unidad de Autismo - Maternidad Concepción Palacios
+			</p>
+			<ul>
+				<li>
+					<a href="{% url 'inicio' %}">inicio</a>
+				</li>
+				<li>
+					<a href="{% url 'nosotros' %}">nosotros</a>
+				</li>
+				<li>
+					<a href="{% url 'noticias' %}">noticias</a>
+				</li>
+				<li>
+					<a href="{% url 'alimentacion' %}">recursos</a>
+				</li>
+				<li>
+					<a href="{% url 'preguntas' %}">preguntas</a>
+				</li>
+				<li>
+					<a href="{% url 'contacto' %}">contacto</a>
+				</li>
+				<li>
+					<a href="{% url 'aldea' %}">aldea</a>
+				</li>
+			</ul>
+			<div>
+				<a target="_blank" href="https://www.facebook.com/unidaddeautismomcp" id="facebook">facebook</a>
+				<a target="_blank" href="https://twitter.com/unidadma" id="twitter">twitter</a>
+				<!-- <a href="" id="googleplus"></a> -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

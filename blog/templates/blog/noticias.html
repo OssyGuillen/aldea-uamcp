@@ -1,4 +1,4 @@
-{% extends "blog/body.html" %}
+{% extends "blog/content.html" %}
 {% load static %}
 {% block extracss %}
 	<style type="text/css">
@@ -16,7 +16,7 @@
 	</script>
 {% endblock custom_script %}
 {% block body %}
-				<h2>noticias</h2>{% for noticia in noticias %}
+				<h2>noticias</h2>{% for noticia in object_list %}
 				<hr>
 				<div style="padding-top:0;">
 					<h2>{{noticia.titulo}}.</h2>

@@ -1,20 +1,26 @@
-{% extends "blog/index.html" %}
+{% extends "blog/body.html" %}
 {% load static %}
 {% block extrahead %}
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 {% endblock extrahead %}
 {% block extracss %}
 	<style type="text/css">
-	p {
+	#body > .section > p {
 		color: black;
 		text-align: justify;
 	}
-	li {
+	#body > .content #section p, li {
 		color: black;
-		margin: 0 20px 15px 20px;
 	}
-	li p {
-		text-align: left;
+	#body > .section small + p {
+		color: black;
+	}
+	#body > .section span strong {
+		color: black;
+		font-size: 10px;
+	}
+	#body .section ul.article {
+		padding-bottom: 0;
 	}
 	</style>
 {% endblock extracss %}
@@ -30,28 +36,33 @@
 			<h2>
 				<strong>MISIÓN</strong>
 			</h2>
-			<p>
+			<p style=>
 				La Unidad de Autismo de la Maternidad Concepción Palacios tiene como meta contribuir con la integración a la sociedad de los niños, niñas y adolescentes que padezcan de algún Trastorno del Espectro Autista.
 			<br>
 			<br>
 				En este sentido, se educará y sensibilizará a la población, de forma que posea las mejores herramientas para aceptar, comprender e integrar a quienes poseen esta condición; lo cual implica, un cambio desde la familia, los maestros y los compañeros de clase.
 			<br>
 			<br>
-				La Unidad de Autismo buscará crear programas y charlas educativas que enseñen a los representantes de los niños, cuáles son las medidas que deben tomar para apoyar el desarrollo de sus hijos, ya que estos trastornos afectan al sistema nervioso y produce dificultades en las relaciones sociales de los individuos que lo padecen. Estas dificultades se observan en &nbsp;la comunicación, conducta e integración del individuo en la sociedad.
+				La Unidad de Autismo buscará crear programas y charlas educativas que enseñen a los representantes de los niños, cuáles son las medidas que deben tomar para apoyar el desarrollo de sus hijos, ya que estos trastornos afectan al sistema nervioso y produce dificultades en las relaciones sociales de los individuos que lo padecen. Estas dificultades se observan en la comunicación, conducta e integración del individuo en la sociedad.
 			</p>
+		</div>
+		<div class="section">
 			<h2>
 				<strong>VISIÓN</strong>
 			</h2>
 			<p>
 				La conformación de una sociedad más tolerante y solidaria, preparada para que el individuo con Trastornos del Espectro Autista pueda desenvolverse sin prejuicios de los demás, sin estar apartado ni privado del aprendizaje académico. Maestros de escuela con la preparación para recibir e integrar a los niños autistas, de forma tal que puedan gozar, a su propio ritmo, del derecho de la educación. Padres con actitud paciente dispuestos a apoyar a sus hijos en el desarrollo personal definido por esta condición.
 			</p>
+		</div>
+		<div class="content" style="background: none; background-color: white;">
+			<div id="section" style="width: 936px;">
 			<h2>
 				<strong>VALORES</strong>
 			</h2>
 			<p>
 				La Unidad de Autismo promoverá:
 			</p>
-			<ol>
+			<ul>
 				<li>
 					El respeto hacia el individuo con Trastornos del Desarrollo (Trastornos del Espectro Autista).
 				</li>
@@ -64,124 +75,125 @@
 				<li>
 					La tolerancia hacia las personas que padecen de alguna condición especial.
 					<br>
-					<br>
-					(Síndrome de Down,&nbsp;Trastornos del Espectro Autista&nbsp;y condiciones discapacitantes)
+					(Síndrome de Down, Trastornos del Espectro Autista y condiciones discapacitantes)
 				</li>
 				<li>
 					La no discriminación de sexo, género y/o preferencias sexuales.
 				</li>
-			</ol>
-			<br>
-			<hr>
+			</ul>
+			</div>
+		</div>
+		<div class="section">
 			<h2>nuestro equipo</h2>
 			<br>
 			<div>
-				<img src="{% static 'img/emily.jpg' %}" alt="">
+				<img src="{% static 'images/emily.jpg' %}" alt="">
 				<div>
 					<b><a href="#">Dra. Ana Cecilia Marquez</a></b>
 					<small>Médico Psiquiatra - Coordinadora de la Unidad</small>
 					<p>Reseña e Información del profesional.</p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="color:black;font-size:10px;">anaceciliamardu@gmail.com</strong>
+						<strong>anaceciliamardu@gmail.com</strong>
 					</span>
 				</div>
 			</div>
 			<ul class="article">
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/frank.jpg' %}" alt="">
 					<b><a href="#">Dra. Miriam Ortiz</a></b>
 					<small>Médico Psiquiatra</small>
 					<p>Especialista en Tratamiento Biomédico.</p>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/jefferson.jpg' %}" alt="">
 					<b><a href="#">Dra. Norietza Maestre</a></b>
 					<small>Medico especialista en desarrollo infantil</small>
 					<p>Evaluacion del desarrollo y riesgo biologico.</p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">norietzam@gmail.com</strong>
+						<strong>norietzam@gmail.com</strong>
 					</span>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/harrison.jpg' %}" alt="">
 					<b><a href="#">Lic. Dorana Donate</a></b>
 					<small>Licenciada en Nutrición y Dietética</small>
-					<p>Evaluación Nutricional de los niños y adolescebtes con TEA y neurodesarrollo.</p>
+					<p>Evaluación Nutricional de los niños y adolescentes con TEA y neurodesarrollo.</p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">dorana.vda@gmail.com</strong>
+						<strong>dorana.vda@gmail.com</strong>
 					</span>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/garry.jpg' %}" alt="">
 					<b><a href="#">Lic. Ana Emilia Sánchez</a></b>
 					<small>Terapeuta Ocupacional</small>
 					<p>Información extra del profesional.</p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">anaesanchezg@hotmail.com</strong>
+						<strong>anaesanchezg@hotmail.com</strong>
 					</span>
 				</li>
 			</ul>
 			<ul class="article">
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/frank.jpg' %}" alt="">
 					<b><a href="#">Lic. Rubén Suarez</a></b>
 					<small>Psicopedagogo</small>
 					<p></p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">rubenforeveryoung@gmail.com</strong>
+						<strong>rubenforeveryoung@gmail.com</strong>
 					</span>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/jefferson.jpg' %}" alt="">
 					<b><a href="#">Lic. Carolina Valdez</a></b>
 					<small>Terapeuta Conductual</small>
 					<p>Psicóloga Terapeuta</p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">carolsalud2313@hotmail.com</strong>
+						<strong>carolsalud2313@hotmail.com</strong>
 					</span>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/harrison.jpg' %}" alt="">
 					<b><a href="#">Lic. Cecilia García</a></b>
 					<small>Terapeuta de lenguaje</small>
 					<p></p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">ceciliagarcia@hotmail.com</strong>
+						<strong>ceciliagarcia@hotmail.com</strong>
 					</span>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/garry.jpg' %}" alt="">
 					<b><a href="#">Lic. Yoly González</a></b>
 					<small>Psicopedagoga</small>
 					<p></p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">ceciliagarcia@hotmail.com</strong>
+						<strong>ceciliagarcia@hotmail.com</strong>
 					</span>
 				</li>
 			</ul>
-			<hr>
+		</div>
+		<div class="section">
 			<h2>asistentes de la unidad</h2>
 			<ul class="article">
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/frank.jpg' %}" alt="">
 					<b><a href="#">TSU Yulesmy Calderón</a></b>
 					<small>TSU en Administración</small>
 					<p></p>
 					<span>
 						<i class="fa fa-envelope"></i>&nbsp;
-						<strong style="font-size:10px;">yulesmy04@gmail.com</strong>
+						<strong>yulesmy04@gmail.com</strong>
 					</span>
 				</li>
 				<li>
-					<img src="{% static 'img/frank.jpg' %}" alt="">
+					<img src="{% static 'images/jefferson.jpg' %}" alt="">
 					<b><a href="#">Maydoli Medina</a></b>
 					<small>Secretaria</small>
 					<p></p>

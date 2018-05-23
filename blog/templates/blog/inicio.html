@@ -1,4 +1,4 @@
-{% extends "blog/index.html" %}
+{% extends "blog/body.html" %}
 {% load static %}
 {% block extracss %}
 	<style type="text/css">
@@ -37,40 +37,38 @@
 {% endblock custom_script %}
 {% block content %}
 		<div class="header">
-			<div><img src="{% static 'img/unidad_autismo.jpg' %}" alt="" width="900" class="center"></div>
+			<div><img src="{% static 'images/unidad_autismo.jpg' %}" alt="" width="920"></div>
 		</div>
 		<div class="body">
 			<div class="section">
 				<div class="article">
 					<h2>¡Bienvenido(a)!</h2>
-					<img src="{% static 'img/heart.jpg' %}" alt="">
-					<p style="text-align: justify; text-justify: inter-word; width:363px;">
+					<img src="{% static 'images/heart.jpg' %}" alt="">
+					<p style="width: 363px;">
 						 <strong>La Unidad de Autismo de la Maternidad Concepción Palacios</strong> es una institución pública y gratuita en Caracas Venezuela, para el tratamiento multidisciplinario de  niños niñas y adolescentes con Trastornos del Neurodesarrollo. Estos trastornos incluyen el: Trastorno del Espectro Autista (TEA), el Trastorno por déficit de atención e hiperactividad, del desarrollo de la inteligencia, de aprendizaje, de la comunicación y motor. <br><br>
 					</p>
-					<p style="text-align: justify; text-justify: inter-word;">
+					<p>
 						La idea surgió hace 8 años como respuesta ante la gran cantidad de casos diagnosticados con estas condiciones, especialmente con el trastorno autista. Hace 10 años se registraba un caso por cada 10.000 niños nacidos. La estadística actual es de un caso por cada 68 niños nacidos ( de acuerdo al Centro para la prevención y control de las enfermedades CDC, cifras del 2012) <br><br>
 					</p>
-					<p style="text-align: justify; text-justify: inter-word;">
+					<p>
 						En vista del aumento de casos, las investigaciones también se han centrado en el tratamiento. Actualmente, el modelo de tratamiento integral se basa en la premisa de la detección temprana, ya que se ha comprobado que tratar a los niños a ese nivel produce una evolución satisfactoria.<br><br>
 					</p>
-					<p style="text-align: justify; text-justify: inter-word;">
+					<p>
 						El protocolo consta de un abordaje médico, nutricional, psicopedagógico, de lenguaje, de terapia ocupacional (integración sensorial) y familiar. Es importante destacar que el abordaje médico-nutricional debe ser parte central del tratamiento. Por ejemplo, en los TEA la modificación de aspectos relacionados con alimentos que conforman la dieta reporta mejorías entre 60% a 80% en los síntomas conductuales. Una vez que el niño ha recibido este tratamiento se podrá observar el efecto de las terapias posteriores. Esto se debe a que estos trastornos pueden presentar condiciones médicas asociadas como alergias, problemas gastrointestinales, metabólicos, etc. que al ser tratada la patología subyacente mejora el neurodesarrollo.
 					</p>
 				</div>
 				<div class="aside">
-					<div class="sidebar">
-						<b>Testimonio de nuestros profesionales</b>
-						<p>
-							Comentario
-						</p>
-						<a href="#">-Dra. Ana Cecilia Márquez.</a>
-					</div>
+					<b>Testimonio de nuestros profesionales</b>
+					<p>
+						Comentario
+					</p>
+					<a href="#">-Dra. Ana Cecilia Márquez.</a>
 				</div>
 			</div>
 		</div>
 		<div class="footer">
 			<div>
-				<a href="{% url 'home' %}"><img src="{% static 'img/what-can-we-do.jpg' %}" alt=""></a>
+				<a href="{% url 'inicio' %}"><img src="{% static 'img/what-can-we-do.jpg' %}" alt=""></a>
 				<h3>que podemos hacer por ti</h3>
 				<p>
 					Prestamos la mejor atención a todos los pacientes a nivel nacional. Con el personal y las terapias mejores capacitadas.
