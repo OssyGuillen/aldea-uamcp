@@ -34,10 +34,22 @@
 	</script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC3M-TWMAaASGrGAZ4jqDsbWt5JPJAY_WA&callback=initMap">
 	</script>
+	<div id="fb-root"></div>
+	<script>
+	(
+		function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.0';
+				fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk')
+	);
+	</script>
 {% endblock custom_script %}
 {% block content %}
 		<div class="header">
-			<div><img src="{% static 'images/unidad_autismo.jpg' %}" alt="" width="920"></div>
+			<div><img src="{% static 'images/banner_unidad.jpg' %}" alt="" height="200" width="920" center="true"></div>
 		</div>
 		<div class="body">
 			<div class="section">
@@ -58,11 +70,14 @@
 					</p>
 				</div>
 				<div class="aside">
-					<b>Testimonio de nuestros profesionales</b>
-					<p>
-						Comentario
-					</p>
-					<a href="#">-Dra. Ana Cecilia Márquez.</a>
+					<b>Facebook</b>
+						<div class="fb-page" data-href="https://www.facebook.com/unidaddeautismomcp/" 
+						data-tabs="timeline,events,messages" data-small-header="false" data-adapt-container-width="true" 
+						data-hide-cover="false" data-show-facepile="false" data-height="700">
+							<blockquote cite="https://www.facebook.com/unidaddeautismomcp/" class="fb-xfbml-parse-ignore">
+								<a href="https://www.facebook.com/unidaddeautismomcp/">Unidad de Autismo Maternidad Concepción Palacios</a>
+								</blockquote>
+					</div>
 				</div>
 			</div>
 		</div>
