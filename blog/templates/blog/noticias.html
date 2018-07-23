@@ -20,10 +20,14 @@
 				<hr>
 				<div style="padding-top:0;">
 					<h2>{{noticia.titulo}}.</h2>
-					<b>autor: {{noticia.autor}} - categoria: {{noticia.categoria}}</b>
+					<b>Autor: {{noticia.autor}} - categoría: {{noticia.categoria}}</b>
 					<br>
 					<br>
-					<img src="{% static '' %}{{noticia.imagen}}" alt="" width="500">
+					<!--
+					{% if noticia.imagen %}
+					<img src="{{noticia.imagen.url}}" alt="" height="80" width="120">
+					{% endif %}
+					-->
 					<span>publicado: {{noticia.created_at}}</span>
 					<br>
 					<br>
