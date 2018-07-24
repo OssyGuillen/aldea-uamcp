@@ -28,12 +28,20 @@
 					<img src="{{noticia.imagen.url}}" alt="" height="80" width="120">
 					{% endif %}
 					-->
+					
 					<span>publicado: {{noticia.created_at}}</span>
 					<br>
 					<br>
 					<p>
-						{% with text=noticia.text|urlize%}
-							{{text|linebreaksbr }}
-						{% endwith %}
+						<!--Codigo para escapar html videos youtube embedidos
+							cuando la categoría sea Video
+						-->
+						{% if noticia.categoria == "Video" %}
+  							{{ noticia.text|safe|linebreaksbr }}
+						{% else %}
+    						{% with text=noticia.text|urlize%}
+							{{text|safe|linebreaksbr }}
+							{% endwith %}
+						{% endif %}
 					</p>
 				</div>{% endfor %}{% endblock body %}

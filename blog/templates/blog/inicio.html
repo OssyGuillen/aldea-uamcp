@@ -14,25 +14,12 @@
 		$(document).ready(function() {
 			$("#inicio").addClass('selected');
 		});
-		function initMap() {
-			var mapOptions = {
-				center: new google.maps.LatLng(10.501000, -66.9464570),
-				zoom: 15,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-			var marker = new google.maps.Marker({
-				position: new google.maps.LatLng(10.4951688, -66.9316006)
-			});
-			marker.setMap(map);
+		function mostrarMapa() {
 		}
 		$(document).ready(function() {
 			$("#myModal").on("shown.bs.modal", function () {
-				google.maps.event.trigger(map, "resize");
 			});
 		});
-	</script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC3M-TWMAaASGrGAZ4jqDsbWt5JPJAY_WA&callback=initMap">
 	</script>
 	<div id="fb-root"></div>
 	<script>
@@ -97,7 +84,7 @@
 				</p>
 			</div>
 			<div>
-				<a href="javascript:void(0);" data-toggle="modal" data-target="#myModal"><img id="myImg" src="{% static 'img/where-you-can-find.jpg' %}" alt=""></a>
+				<a href="javascript:mostrarMapa();" data-toggle="modal" data-target="#myModal"><img id="myImg" src="{% static 'img/where-you-can-find.jpg' %}" alt=""></a>
 				<h3>donde encontrarnos</h3>
 				<p>
 					Ubícanos en el Anexo Negra Matea de la Maternidad Concepción Palacios, en el oeste de la ciudad de Caracas.
@@ -111,9 +98,14 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 						</button>
+						<h3 class="modal-title" >Mapa Ubicación</h4>
 					</div>
 					<div class="modal-body">
-						<div id="map"></div>
+						<div id="map">
+							<img  class="center-block img-responsive" src="http://maps.google.com/maps/api/staticmap?center=10.4951688,-66.9316006&zoom=16&size=600x400&maptype=hybrid&sensor=false&language=&markers=color:red|label:none|10.4951688,-66.9316006" 
+							title="Maternidad Concepción Palacios, Av. San Martín, Caracas 1020, Distrito Capital">
+							
+						</div>
 					</div>
 					<div class="modal-footer">
 						<div class="col-xs-9"></div>
