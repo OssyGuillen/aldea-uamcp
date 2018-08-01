@@ -1,0 +1,47 @@
+{% extends "blog/content.html" %}
+{% load static %}
+{% block extracss %}
+	<style type="text/css">
+	p {
+		color: black;
+		text-align: justify;
+	}
+	</style>
+{% endblock extracss %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#noticias").addClass('selected');
+		});
+	</script>
+{% endblock custom_script %}
+{% block body %}
+				<h2>noticias</h2>{% for noticia in object_list %}
+				<hr>
+				<div style="padding-top:0;">
+					<h2>{{noticia.titulo}}.</h2>
+					<b>Autor: {{noticia.autor}} - categoría: {{noticia.categoria}}</b>
+					<br>
+					<br>
+					<!--
+					{% if noticia.imagen %}
+					<img src="{{noticia.imagen.url}}" alt="" height="80" width="120">
+					{% endif %}
+					-->
+					
+					<span>publicado: {{noticia.created_at}}</span>
+					<br>
+					<br>
+					<p>
+						<!--Codigo para escapar html videos youtube embedidos
+							cuando la categoría sea Video
+						-->
+						{% if noticia.categoria == "Video" %}
+  							{{ noticia.text|safe|linebreaksbr }}
+						{% else %}
+    						{% with text=noticia.text|urlize%}
+							{{text|safe|linebreaksbr }}
+							{% endwith %}
+						{% endif %}
+					</p>
+				</div>{% endfor %}{% endblock body %}

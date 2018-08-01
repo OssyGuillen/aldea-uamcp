@@ -1,0 +1,31 @@
+{% extends "blog/content.html" %}
+{% block extracss %}
+	<style type="text/css">
+	p {
+		color: black;
+		text-align: justify;
+	}
+	</style>
+{% endblock extracss %}
+{% block custom_script %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#contacto").addClass('selected');
+		});
+	</script>
+{% endblock custom_script %}
+{% block body %}
+				<h2>contáctanos</h2>
+				<form action="">
+					<b>Envíamos un mensaje</b>
+					<br>
+					<br>
+					<p>
+						Envíanos cualquier duda, inquietud, ayuda o inclusive recomendación que quieras hacernos.
+					</p>
+					<br>
+					<input type="text" name="fname" id="fname" placeholder="Nombre">
+					<input type="text" name="email" id="email" placeholder="E-mail">
+					<textarea name="message" id="message" cols="30" rows="10" placeholder="Escribe tu mensaje acá..."></textarea>
+					<input type="submit" name="send" id="send" value="Enviar">
+				</form>{% endblock body %}
