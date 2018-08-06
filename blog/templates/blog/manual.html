@@ -1,59 +1,26 @@
-<!DOCTYPE HTML>
-{% extends "index.html" %}
-
+{% extends "blog/alimentacion.html" %}
 {% load static %}
+{% block extrahead %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+{% endblock extrahead %}
 {% block extracss %}
 <style type="text/css">
 	p {
 		color: black;
 		text-align: justify;
 	}
-	h5 {
-		color: #ef414a;
-	}
-	h3 {
+	#body #content #section div b {
 		color: #144879;
-	}
-	li {
-		color: black;
+		display: inline-block;
+		font-family: 'Arapey';
+		font-size: 18px;
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+		text-transform: capitalize;
 	}
 </style>
 {% endblock extracss %}
-{% block content %}
-	<div id="body">
-		<div id="content">
-			<div id="sidebar">
-				<h3><strong>Mas Recursos</strong></h3>
-				<ul>
-					<li class="selected" style="padding-bottom:1px">
-						<a href="{% url 'alimentacion' %}"><strong>Alimentación</strong></a>
-					</li>
-					<li class="selected" style="padding-bottom:1px">
-						<a href="{% url 'enlaces' %}"><strong>Enlaces de interés</strong></a>
-					</li>
-					<li class="selected" style="padding-bottom:1px">
-						<a href="{% url 'centros' %}"><strong>Centros de ayuda</strong></a>
-					</li>
-					<li class="selected" style="padding-bottom:1px">
-						<a href="{% url 'peliculas' %}"><strong>Películas</strong></a>
-					</li>
-					<li class="selected" style="padding-bottom:1px">
-						<a href="{% url 'libro' %}"><strong>El Autismo en mi Vida (Libro)</strong></a>
-					</li>
-				</ul>
-			</div>
-			<div id="section" style="margin-left: 40px; width:600px; padding-right:0px;">
-				<h2>¡Manual para los primeros 100 días!</h2>
-				<p>
-					Un manual para ayudar a las familias a obtener la información crítica que necesitan durante los primeros 100 días luego de un diagnóstico de autismo.<br><br><br>
-				</p>
-
-				<a href="{% static 'manual.pdf' %}" class="download btn btn-primary">Descargar <i class="fa fa-download"></i></a>
-			</div>
-		</div>
-	</div>
-	</div>
-{% endblock content %}
 {% block custom_script %}
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -62,5 +29,14 @@
 		});
 	</script>
 {% endblock custom_script %}
+{% block body %}
+				<h2>¡Manual para los primeros 100 días!</h2>
+				<p>
+					Un manual para ayudar a las familias a obtener la información crítica que necesitan durante los primeros 100 días luego de un diagnóstico de autismo.
+				</p>
+				<img src="{% static 'images/manual.jpg' %}" style="margin: 0 100px;" width="250" alt=""><br><br>
+				<a style="margin: 0 200px;" href="http://unidadautismo.herokuapp.com/static/pdf/manual.pdf" class="download btn btn-primary center">Descargar <i class="fa fa-download"></i></a>
+			
+{% endblock body %}
 </body>
 </html>

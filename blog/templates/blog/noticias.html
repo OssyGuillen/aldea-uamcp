@@ -20,21 +20,18 @@
 				<hr>
 				<div style="padding-top:0;">
 					<h2>{{noticia.titulo}}.</h2>
-					<b>Autor: {{noticia.autor}} - categoría: {{noticia.categoria}}</b>
-					<br>
-					<br>
-					
 					<!--
 					{% if noticia.imagen %}
 					<img src="{{noticia.imagen.url}}" alt="" height="80" width="120">
 					{% endif %}
 					-->
 					{% if noticia.imagen %}
-					<img src="{{noticia.imagen.url}}" alt="" width="120">
-					{% endif %}
+					<img src="{{noticia.imagen.url}}" alt=" " width="320">
 					<br>
-					
-					
+					{% endif %}
+					<b>Autor: {{noticia.autor}} - categoría: {{noticia.categoria}}</b>
+					<br>
+					<br>
 					<span>publicado: {{noticia.created_at}}</span>
 					<br>
 					<br>
