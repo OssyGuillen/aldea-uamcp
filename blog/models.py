@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField #Guardar Imagen Cloudinary
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
@@ -15,7 +16,8 @@ class UserProfile(models.Model):
 
 class Noticia(models.Model):
     user = models.ForeignKey(User)
-    imagen = models.ImageField(upload_to='images/news', null=True, blank=True)
+    #imagen = models.ImageField(upload_to='images/news', null=True, blank=True)
+    imagen = CloudinaryField('image') #Guardar Imagen Cloudinary
     autor = models.CharField(max_length=100, default="Dra. Ana Cecilia Marquez")
     categoria = models.CharField(max_length=100, default="General")
     titulo = models.CharField(max_length=100, default="")

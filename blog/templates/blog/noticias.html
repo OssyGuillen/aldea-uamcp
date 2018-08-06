@@ -23,11 +23,17 @@
 					<b>Autor: {{noticia.autor}} - categoría: {{noticia.categoria}}</b>
 					<br>
 					<br>
+					
 					<!--
 					{% if noticia.imagen %}
 					<img src="{{noticia.imagen.url}}" alt="" height="80" width="120">
 					{% endif %}
 					-->
+					{% if noticia.imagen %}
+					<img src="{{noticia.imagen.url}}" alt="" width="120">
+					{% endif %}
+					<br>
+					
 					
 					<span>publicado: {{noticia.created_at}}</span>
 					<br>
