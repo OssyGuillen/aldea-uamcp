@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary', #Guardar Imagen Cloudinary
+    'bootstrap3', #Bootstrap (sesion antigua)
     'blog',
 )
 
@@ -115,3 +116,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -1,0 +1,199 @@
+{% extends "blog/body.html" %}
+{% load static %}
+{% block title %}Administrar Noticias{% endblock title %}
+{% block extracss %}
+<style type="text/css">
+	.box {
+        border-top: 3px solid #F3F3F3 !important;
+        border-left: 2px solid #F3F3F3 !important;
+        border-right: 2px solid #F3F3F3 !important;
+        border-bottom: 2px solid #F3F3F3 !important;
+    }
+	.modal-header,s .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-body {
+      background-color: #f9f9f9;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+</style>
+{% endblock extracss %}
+{% block content %}
+
+<div class="row">
+	<div class="col-xs-12" style="padding-right: 2%;">
+		<div>
+			<div>
+				<h3 class="text-center">Administrar Noticias</h3>
+			</div>
+			<div class="table-responsive" style="padding: 5%;">
+				<table class="table table-bordered table-hover table-striped">
+			    <thead>
+				    <tr class="bg-primary">
+				    	<th>Título</th>
+				    	<th>Categoría</th>
+				    	<th>Autor</th>
+				    	<th>Creación</th>
+				    	<th>Imagen</th>
+				    	<th colspan="3">Acciones (Modificar no implementado, ahora es eliminar)</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+			    {% for noticia in noticias %}
+			    	<tr role="row">
+				      <td>{{ noticia.titulo }}</td>
+				      <td>{{ noticia.categoria }}</td>
+				      <td>{{ noticia.autor }}</td>
+				      <td>{{ noticia.created_at }}</td>
+				      {% if noticia.imagen %}
+				      	<td><span class="glyphicon glyphicon-picture"></span></p></td>
+					  {% else %}
+					  	<td></td>
+					  {% endif %}
+					   <td>
+                  		<a data-toggle="modal" 
+                  		data-id="{{ noticia.id}}"
+                  		data-nombre="{{ noticia.titulo }}"
+                  		data-fecha="{{ noticia.created_at }}"
+                    	data-categoria="{{ noticia.categoria }}" 
+                    	data-autor="{{ noticia.autor }}"
+                    	{% if noticia.imagen %}
+				      		data-imagenurl="{{ noticia.imagen.url }}"
+					  	{% else %}
+					  		data-imagenurl="{% static 'img/sinimagen.jpg' %}"
+					  	{% endif %}
+                    	data-descripcion="{{ noticia.text }}"
+                  		title="Ver Detalle" data-target="#noticiaDialog" href="#noticiaDialog" class="btn btn-success"> 
+                  			<span class="glyphicon glyphicon-zoom-in">
+                  				VER
+                    		</span>
+                    		</a>
+                	 </td>
+					  <td>
+                  		<form action="#" role="form" method="get">
+                    		<a href="{% url 'modificar-noticia' noticia.pk %}" class="btn btn-success">
+                    			<span class="glyphicon glyphicon-pencil">
+                    				MODIFICAR	
+                    			</span>
+                    			</a>
+                  		</form>
+                	 </td>
+                	 <td>
+                  		<a href="{% url 'eliminar-noticia' noticia.pk %}" class="btn btn-danger"> 
+                  			<span class="glyphicon glyphicon-trash">
+                  				ELIMINAR	
+                    		</span>
+                    		</a>
+                	 </td>
+                	
+		                </div>
+				      </td>
+				    </tr>
+			    {% endfor %}
+			    </tbody>
+			  </table>
+			</div>
+			<div class="text-center">
+		      <a href="{% url 'noticia' %}" class="btn btn-primary btn-lg">Nueva Noticia</a>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal Dialogo noticia -->
+  <div class="modal fade" id="noticiaDialog" role="dialog">
+    <div class="modal-dialog success modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header container col-md-12">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title" id="nombrenoticiaModal">Titulo noticia</h4>
+        </div>
+        <div class="modal-body container col-md-12">
+                <div class="row">
+                <div class="col-md-6 text-center">
+                  <a class="btn btn-black">
+                  <img id="idnoticiaModal" width="320" class="center-block img-responsive btn" src="{% static 'img/error.png' %}"
+                  alt="image">
+                  </a>
+                  <!-- Boton noticia Ampliada -->
+                  <hr>
+                </div>
+                <div class="col-md-6">
+                  <h4 id="fechaModal">Fecha: 0.00</h4>
+                  <h4 id="categoriaModal">Categoría: 2000</h4>
+                  <h4 id="autorModal">Autor: 2000</h4>
+                </div>
+              </div>
+              <div class="row">
+              	<div class="col-md-1">
+              	</div>
+               	<div class="col-md-10">
+               		<h4 class="text-center"><b>Texto:</b></h4>
+                  		<div class="well">
+                  		<p id="descripcionModal" class="text-justify"></p>
+               		</div>
+              	</div>
+                <div class="col-md-1">
+              	</div>
+              </div>
+        </div>
+        <div class="modal-footer container col-md-12">
+          <div class="col-md-12 text-right">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+ <script>
+   
+   
+   
+   //Dialogo noticias
+   $('#noticiaDialog').on('show.bs.modal', function(e) {
+    
+    
+    //get data-id attribute of the clicked element
+    var idnoticia = $(e.relatedTarget).data('id');
+    var nombrenoticia = $(e.relatedTarget).data('nombre');
+    var descnoticia = $(e.relatedTarget).data('descripcion');
+    var direccionImagen = $(e.relatedTarget).data('imagenurl');;
+    
+    var catnoticia = $(e.relatedTarget).data('categoria');
+    var fechanoticia = $(e.relatedTarget).data('fecha');
+    var autornoticia = $(e.relatedTarget).data('autor');
+    
+    
+                          
+    var fecha = "<b>Fecha:</b> " + fechanoticia;
+    var autor = "<b>Autor:</b> " + autornoticia;
+    var categoria = "<b>Categoría:</b> " + catnoticia;
+    
+
+    //Llenamos con datos noticia
+    document.getElementById('idnoticiaModal').src= direccionImagen;
+    document.getElementById('nombrenoticiaModal').innerHTML = nombrenoticia ;
+    
+    document.getElementById('fechaModal').innerHTML =  fecha;
+    document.getElementById('autorModal').innerHTML =  autor;
+    document.getElementById('categoriaModal').innerHTML =  categoria;
+    document.getElementById('descripcionModal').innerHTML =  descnoticia;
+    
+});
+  </script>
+  
+
+
+{% endblock content %}
+

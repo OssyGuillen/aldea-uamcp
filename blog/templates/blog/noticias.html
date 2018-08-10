@@ -16,7 +16,20 @@
 	</script>
 {% endblock custom_script %}
 {% block body %}
-				<h2>noticias</h2>{% for noticia in object_list %}
+				<div class="row" style="padding-top:0;">
+				<div class="col-sm-1" style="padding-top:0;">
+					<a href="/noticia/lista">
+				 			<img class="img-circle media-object" src="{% static 'img/admin.png' %}" height="40" width="40">
+				 	</a>
+                </div>
+                <div class="col-sm-8" style="padding-top:0;">
+                	<h2 class="text-center" style="font-size: 40px;">noticias</h2>
+                </div>
+				</div>
+				
+				
+				
+				{% for noticia in object_list %}
 				<hr>
 				<div style="padding-top:0;">
 					<h2>{{noticia.titulo}}.</h2>
