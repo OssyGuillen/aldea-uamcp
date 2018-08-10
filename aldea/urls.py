@@ -58,7 +58,7 @@ urlpatterns = [
     ),
     url(
         r'^noticia/modificar/(?P<id>\d+)$',
-        'blog.views.eliminarNoticia',
+        'blog.views.modificarNoticia',
         name='modificar-noticia'
     )
 ] + staticfiles_urlpatterns()

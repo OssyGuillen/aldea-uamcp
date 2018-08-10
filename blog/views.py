@@ -105,20 +105,32 @@ class NoticiaView(generic.CreateView):
     @method_decorator(login_required)
     def post(self, request, *args, **kwargs):
         form = NoticiaForm(request.POST, request.FILES)
-        print(form)
-        print(form.is_valid(),"MMM??")
         if form.is_valid():
-            print(form)
             noticia = form.save()
-            print(noticia)
-            print('??',noticia.imagen,'??')
-            print(noticia.imagen.url)
             #noticia.user = request.user
             noticia.save()
             return HttpResponseRedirect(
                 reverse_lazy('noticias_list'))
         else:
             return render(request, self.template_name, {'form': form})
+
+
+@login_required 
+def modificarNoticia(request, id):
+    template_name = "noticia_mod.html"
+    noticia = Noticia.objects.get(pk=id)
+    if request.method == "POST":
+        form = NoticiaForm(request.POST, request.FILES, instance=noticia)
+        if form.is_valid():
+            noticia = form.save()
+            #noticia.user = request.user
+            noticia.save()
+            return HttpResponseRedirect(
+                reverse_lazy('noticias_list'))
+    else:
+        form = NoticiaForm(instance=noticia)
+    return render(request, template_name, {'form': form})
+
 
 
 class NoticiaListView(ListView):
@@ -137,5 +149,6 @@ class NoticiaListView(ListView):
 @login_required 
 def eliminarNoticia(request, id):
     noticia = Noticia.objects.get(pk=id)
+    cloudinary.uploader.destroy(noticia.imagen.public_id,invalidate=True)
     noticia.delete()
     return HttpResponseRedirect(reverse_lazy('noticias_list'))
