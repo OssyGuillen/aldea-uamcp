@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import django_heroku
+import cloudinary #Guardar Imagen Cloudinary
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,7 +39,16 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary', #Guardar Imagen Cloudinary
+    'bootstrap3', #Bootstrap (sesion antigua)
     'blog',
+)
+
+#Guardar Imagen Cloudinary
+cloudinary.config(
+    cloud_name = "unidadautismo",
+    api_key = "926481155589631",
+    api_secret = "_ynwfo1voPDGPzPJkO1zU2uirSk"
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,3 +116,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 django_heroku.settings(locals())
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+#Correo Sendgrid para contacto
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'uautismomcp'
+EMAIL_HOST_PASSWORD = 'autismo123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

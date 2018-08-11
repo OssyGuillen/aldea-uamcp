@@ -17,6 +17,11 @@ from django.contrib import admin
 from django.views.generic import TemplateView, ListView
 from blog.models import Noticia
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.urls import static
+from django.conf import settings
+from blog.views import *
+from django.contrib import admin
+
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='blog/inicio.html'), name='inicio'),
@@ -32,7 +37,35 @@ urlpatterns = [
     url(r'^recursos/manual/$', TemplateView.as_view(template_name='blog/manual.html'), name='manual'),
     url(r'^recursos/libro/$', TemplateView.as_view(template_name='blog/libro.html'), name='libro'),
     url(r'^preguntas/$', TemplateView.as_view(template_name='blog/preguntas.html'), name='preguntas'),
-    url(r'^contacto/$', TemplateView.as_view(template_name='blog/contacto.html'), name='contacto'),
     url(r'^aldea/$', TemplateView.as_view(template_name='blog/aldea.html'), name='aldea'),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(
+        r'^noticia/nueva/$',
+        NoticiaView.as_view(),
+        name='noticia'
+    ),
+    url(
+        r'^noticia/lista/$',
+        NoticiaListView.as_view(),
+        name='noticias_list'
+    ),
+    url(
+        r'^noticia/eliminar/(?P<id>\d+)$',
+        'blog.views.eliminarNoticia',
+        name='eliminar-noticia'
+    ),
+    url(
+        r'^noticia/modificar/(?P<id>\d+)$',
+        'blog.views.modificarNoticia',
+        name='modificar-noticia'
+    ),
+    url(r'^contacto/$',
+        contactoView.as_view(),
+        name='contacto')
 ] + staticfiles_urlpatterns()
+
+
+
+#urlpatterns += static('/images/news/',document_root='images/news')
+urlpatterns += static(settings.MEDIA_URL, document_root='')

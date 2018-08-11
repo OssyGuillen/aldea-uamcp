@@ -1,66 +1,44 @@
-<!DOCTYPE HTML>
-{% extends "index.html" %}
-
+{% extends "blog/alimentacion.html" %}
 {% load static %}
+{% block extrahead %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css">
+{% endblock extrahead %}
 {% block extracss %}
 <style type="text/css">
-    p {
-        color: black;
-        text-align: justify;
-    }
-    h5 {
-        color: #ef414a;
-    }
-    h3 {
-        color: #144879;
-    }
-    li {
-        color: black;
-    }
+	p {
+		color: black;
+		text-align: justify;
+	}
+	#body #content #section div b {
+		color: #144879;
+		display: inline-block;
+		font-family: 'Arapey';
+		font-size: 18px;
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+		text-transform: capitalize;
+	}
 </style>
 {% endblock extracss %}
-{% block content %}
-    <div id="body">
-        <div id="content">
-            <div id="sidebar">
-                <h3><strong>Mas Recursos</strong></h3>
-                <ul>
-                    <li class="selected" style="padding-bottom:1px">
-                        <a href="{% url 'alimentacion' %}"><strong>Alimentación</strong></a>
-                    </li>
-                    <li class="selected" style="padding-bottom:1px">
-                        <a href="{% url 'enlaces' %}"><strong>Enlaces de interés</strong></a>
-                    </li>
-                    <li class="selected" style="padding-bottom:1px">
-                        <a href="{% url 'centros' %}"><strong>Centros de ayuda</strong></a>
-                    </li>
-                    <li class="selected" style="padding-bottom:1px">
-                        <a href="{% url 'peliculas' %}"><strong>Películas</strong></a>
-                    </li>
-                    <li class="selected" style="padding-bottom:1px">
-                        <a href="{% url 'manual' %}"><strong>¿Primeros 100 días?</strong></a>
-                    </li>
-                </ul>
-            </div>
-            <div id="section" style="margin-left: 40px; width:600px; padding-right:0px;">
-                <h2>El Autismo en mi Vida</h2>
-                <p>
-                    Ana Cecilia Márques Duque escudriña en su alma, su vida, su familia, la de su familia y allegados,  quienes han formado parte de su camino descubriendo la propia alma de su hijo Gabriel, diagnosticado con autismo a los dos años de edad. La autora relata cómo se ha conformado su comprensión del tema y explica el abordage médico-biológico de esta condición relacionando aspectos como la alimentación, las terapias cognitivo-conductuales, de integración sensorial, y otras como las asistidas con animales o la medicina alternativa. También narra la experiencia de Gabriel en el Sistema de Orquestas. La autora reflexiona sobre las dificultades y retos de la integración escolar de personas con diversidad funcional y proyecta los desafíos que se vislumbran en el área  de autismo en el futuro inmediato de nuestro país.<br><br><br>
-                </p>
-
-                <a href="{% static 'el_autismo_en_mi_vida.pdf' %}" class="download btn btn-primary">Descargar <i class="fa fa-download"></i></a>
-            </div>
-        </div>
-    </div>
-    </div>
-{% endblock content %}
 {% block custom_script %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.recursos').removeClass('hidden');
-            $('#recursos').addClass('selected');
-        });
-    </script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.recursos').removeClass('hidden');
+			$('#recursos').addClass('selected');
+		});
+	</script>
 {% endblock custom_script %}
+{% block body %}
+            <h2>El Autismo en mi Vida</h2>
+            <p>
+            Ana Cecilia Márquez Duque escudriña en su alma, su vida, su familia, la de su familia y allegados, quienes han formado parte de su camino descubriendo la propia alma de su hijo Gabriel, diagnosticado con autismo a los dos años de edad. La autora relata cómo se ha conformado su comprensión del tema y explica el abordaje médico-biológico de esta condición relacionando aspectos como la alimentación, las terapias cognitivo-conductuales, de integración sensorial, y otras como las asistidas con animales o la medicina alternativa. También narra la experiencia de Gabriel en el Sistema de Orquestas. La autora reflexiona sobre las dificultades y retos de la integración escolar de personas con diversidad funcional y proyecta los desafíos que se vislumbran en el área de autismo en el futuro inmediato de nuestro país.</p>
+            </p>
+            <br>
+			<img src="{% static 'images/libroautismo.jpg' %}" style="margin: 0 150px;" width="250" alt=""><br><br>
+			<a style="margin-left: 240px;" href="http://unidadautismo.herokuapp.com/static/pdf/el_autismo_en_mi_vida.pdf" class="download btn btn-primary center">Descargar <i class="fa fa-download"></i></a>
+			    
+			
+{% endblock body %}
 </body>
 </html>
