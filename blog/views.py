@@ -26,6 +26,7 @@ from django.views.generic import TemplateView
 from cloudinary.forms import cl_init_js_callbacks
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.contrib.auth import logout
 
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
@@ -172,3 +173,10 @@ class contactoView(generic.CreateView):
         else:
             messages.warning(request, 'Ha ocurrido un Error, su mensaje no se ha enviado')
         return render(request, self.template_name)
+        
+#Cerrar sesion
+
+@login_required 
+def cerrarSesion(request):
+    logout(request)
+    return HttpResponseRedirect('/noticias')
