@@ -24,7 +24,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 from cloudinary.forms import cl_init_js_callbacks
-
+from django.core.mail import send_mail
+from django.contrib import messages
 
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
