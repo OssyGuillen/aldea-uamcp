@@ -158,9 +158,9 @@ class contactoView(generic.CreateView):
         return render(request, self.template_name)
 
     def post(self, request, *args, **kwargs):
-        msj = request.POST.get( u'message', "").encode( "utf-8" ) 
-        email = request.POST.get(u'email', "").encode( "utf-8" ) 
-        name = request.POST.get(u'fname', "").encode( "utf-8" ) 
+        msj = request.POST.get( 'message', "")
+        email = request.POST.get('email', "") 
+        name = request.POST.get('fname', "")
         #print('ENVIAR',msj,email,name)
         mensaje = 'Correo proveniente del blog http://unidadautismo.herokuapp.com \n\n'
         mensaje = mensaje + '\n\nEnviado por: ' + name + '\n\nEmail: ' + email + '\n\nMensaje: \n\n' + msj
