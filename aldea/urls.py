@@ -37,7 +37,6 @@ urlpatterns = [
     url(r'^recursos/manual/$', TemplateView.as_view(template_name='blog/manual.html'), name='manual'),
     url(r'^recursos/libro/$', TemplateView.as_view(template_name='blog/libro.html'), name='libro'),
     url(r'^preguntas/$', TemplateView.as_view(template_name='blog/preguntas.html'), name='preguntas'),
-    url(r'^contacto/$', TemplateView.as_view(template_name='blog/contacto.html'), name='contacto'),
     url(r'^aldea/$', TemplateView.as_view(template_name='blog/aldea.html'), name='aldea'),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
@@ -60,7 +59,10 @@ urlpatterns = [
         r'^noticia/modificar/(?P<id>\d+)$',
         'blog.views.modificarNoticia',
         name='modificar-noticia'
-    )
+    ),
+    url(r'^contacto/$',
+        contactoView.as_view(),
+        name='contacto')
 ] + staticfiles_urlpatterns()
 
 

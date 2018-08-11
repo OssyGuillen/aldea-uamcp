@@ -119,3 +119,11 @@ django_heroku.settings(locals())
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+#Correo Sendgrid para contacto
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'uautismomcp'
+EMAIL_HOST_PASSWORD = 'autismo123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

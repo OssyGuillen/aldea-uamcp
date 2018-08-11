@@ -72,10 +72,6 @@ class ManualView(generic.TemplateView):
 class LibroView(generic.TemplateView):
     template_name = 'libro.html'
 
-class ContactoView(generic.TemplateView):
-    template_name = 'contact.html'
-
-
 class NoticiasView(generic.TemplateView):
     template_name = 'blog.html'
 
@@ -152,3 +148,26 @@ def eliminarNoticia(request, id):
     cloudinary.uploader.destroy(noticia.imagen.public_id,invalidate=True)
     noticia.delete()
     return HttpResponseRedirect(reverse_lazy('noticias_list'))
+    
+    
+#Contacto
+
+class contactoView(generic.CreateView):
+    template_name = "blog/contacto.html"
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+        msj = request.POST.get( u'message', "").encode( "utf-8" ) 
+        email = request.POST.get(u'email', "").encode( "utf-8" ) 
+        name = request.POST.get(u'fname', "").encode( "utf-8" ) 
+        #print('ENVIAR',msj,email,name)
+        mensaje = 'Correo proveniente del blog http://unidadautismo.herokuapp.com \n\n'
+        mensaje = mensaje + '\n\nEnviado por: ' + name + '\n\nEmail: ' + email + '\n\nMensaje: \n\n' + msj
+        envio = send_mail('[Mensaje del Blog]', mensaje, email, ['unidadautismomaternidadcom@gmail.com'], fail_silently=False)
+        #print(envio)
+        if (envio):
+            messages.success(request, "Mensaje enviado correctamente!")
+        else:
+            messages.warning(request, 'Ha ocurrido un Error, su mensaje no se ha enviado')
+        return render(request, self.template_name)
