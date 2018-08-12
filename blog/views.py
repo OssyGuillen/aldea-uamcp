@@ -24,6 +24,8 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 from cloudinary.forms import cl_init_js_callbacks
+import cloudinary.uploader
+import cloudinary
 from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth import logout
