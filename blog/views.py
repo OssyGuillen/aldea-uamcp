@@ -149,7 +149,8 @@ class NoticiaListView(ListView):
 @login_required 
 def eliminarNoticia(request, id):
     noticia = Noticia.objects.get(pk=id)
-    cloudinary.uploader.destroy(noticia.imagen.public_id,invalidate=True)
+    if (noticia.imagen.url): # Si existe imagen la borramos de cloduinary
+        cloudinary.uploader.destroy(noticia.imagen.public_id,invalidate=True)
     noticia.delete()
     return HttpResponseRedirect(reverse_lazy('noticias_list'))
     
