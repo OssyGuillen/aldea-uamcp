@@ -169,7 +169,7 @@ class contactoView(generic.CreateView):
         #print('ENVIAR',msj,email,name)
         mensaje = 'Correo proveniente del blog http://unidadautismo.herokuapp.com \n\n'
         mensaje = mensaje + '\n\nEnviado por: ' + name + '\n\nEmail: ' + email + '\n\nMensaje: \n\n' + msj
-        envio = send_mail('[Mensaje del Blog]', mensaje, email, ['unidadautismomaternidadcom@gmail.com'], fail_silently=False)
+        envio = send_mail('[Mensaje del Blog]', mensaje, email, ['uautismomcp@gmail.com'], fail_silently=False)
         #print(envio)
         if (envio):
             messages.success(request, "Mensaje enviado correctamente!")
