@@ -1,0 +1,346 @@
+commit 0280f0f488d6af031ceb1ba106f20c3b70d24f77
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Tue Aug 14 17:18:12 2018 +0000
+
+    Correos personal - nosotros
+
+commit 683853b063367cee3e35dd10daac02d7a097e9b4
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Aug 13 05:33:40 2018 +0000
+
+    Carrusel imagen pagina principal, cambio correo de contacto
+
+commit 6df64e61a2197e4651ac9f77ac58b7a10c2ddcc7
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Sun Aug 12 17:21:08 2018 +0000
+
+    Solucionado error eliminar imagen cloudinary
+
+commit b63985300c85f8823f38696893e94dfb8ec07a8e
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Sun Aug 12 16:49:43 2018 +0000
+
+    Error import faltante
+
+commit 8951e4cc9650c7418b1a45f78c6c2a2ff713b30b
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Sat Aug 11 01:39:13 2018 +0000
+
+    Agregado cerrar sesion
+
+commit b4e360ef4858129c7f092e620ba69caa56838b90
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Sat Aug 11 01:07:46 2018 +0000
+
+    Arreglo: Error imports faltantes
+
+commit 10d258f034ad00ec57d55bc95132d586b649bf8a
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Sat Aug 11 01:05:28 2018 +0000
+
+    Arreglo: Error unicode
+
+commit 29f2e95c498d2a9eeb1ef612af73f43164fde733
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Sat Aug 11 00:59:37 2018 +0000
+
+    Formulario de contacto funcional (agregado servicio correos Sendgrid)
+
+commit ff5db78d1ab6cd8a1b216f7e4639cb1a9f85c82e
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Fri Aug 10 18:14:31 2018 +0000
+
+    Arreglado texto en tabla administrar noticias
+
+commit 8b6a5ed1ce221a315b889a7c1eadf1574eee959b
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Fri Aug 10 18:11:18 2018 +0000
+
+    Modulo administrar noticias, modificar agregado y elimar imagen servidor cloudinary
+
+commit e30753eabd19858cac2418fe0a2f11153f0dec64
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Fri Aug 10 04:05:40 2018 +0000
+
+    Arreglada seccion nosotros
+
+commit b5e02106e93583791717b2cfad4064142c694e8c
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Fri Aug 10 03:44:41 2018 +0000
+
+    Agregada Administracion de noticias
+
+commit cb3d608f5743e00cc88b500cdfa92897add87003
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Aug 6 23:53:42 2018 +0000
+
+    Ubicacion cloudinary
+
+commit fd1354ad5a8f8fd5fe4c1d5fcd03ed40480232c8
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Aug 6 21:04:46 2018 +0000
+
+    Arreglados errores html libro,manual,noticias y agregado funditdea
+
+commit 62428cc434acc5cf032f51087a454c2c9feca47c
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Aug 6 17:45:21 2018 +0000
+
+    Imagenes en cloudinary
+
+commit fbc2d23ba67492e6de56755b31d2d577dcfb045f
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Jul 30 00:50:02 2018 +0000
+
+    Agregado twitter y link mapa
+
+commit f2e1488cf06c19ab1bf0f7f8e9d6d6497216d744
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Tue Jul 24 04:08:29 2018 +0000
+
+    Arreglado mapa, colocada categoria video para youtube
+
+commit d95647d6dd63e531e64da2474fb9e1a73d280ead
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Jul 23 21:13:17 2018 +0000
+
+    Agregado facebook pagina inicio y tamaño banner
+
+commit 0fc3cfec023e04eb48837db2016f46c5b475c0d3
+Author: androiderex <andresguzman10@gmail.com>
+Date:   Mon Jul 23 19:30:41 2018 +0000
+
+    Eliminada imagen de noticias
+
+commit 5483b5a284dd80df355d6e364215661a2d0d8b88
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Thu May 24 07:48:57 2018 -0400
+
+    Agregado especialista
+
+commit c647517b97fda0c85a668a3bdddef41a0ddc6d4a
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Wed May 23 01:20:58 2018 -0400
+
+    Cambios varios
+
+commit 07c20b24a7eca0602447763dabaa2a519bc496a5
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Wed May 23 01:20:06 2018 -0400
+
+    Cambios varios
+
+commit e2a0fe8ddacec01c3e081a24a26bda57f9cad660
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Wed May 23 00:43:27 2018 -0400
+
+    Cambios varios
+
+commit dc670a72a4399250c14cf871b4c5ae2a1cacc6ce
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Mon May 21 18:13:21 2018 -0400
+
+    Cambio a Python3
+
+commit 957e631dc15c69623a6d9dab9cccccfce36485e6
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Mon May 21 18:05:12 2018 -0400
+
+    Cambio a Python3
+
+commit 1473a82c6234361336a13ca74dd94217d9458193
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Mon May 21 18:02:51 2018 -0400
+
+    Cambio a Python3
+
+commit 9fb55ed3247931ff18db244334f2e0b118d5faed
+Author: Christhian Guevara <christhian@thesocialus.com>
+Date:   Mon May 21 17:13:11 2018 -0400
+
+    Nueva rama Develop
+    Agregado .gitignore
+    Limpieza de codigo
+    Cambio de las estructuras de las carpetas
+    Borradas dependencias de aldea
+    Agregados CDN para limitar ancho de banda
+    Corregidos errores en Templates
+    Agregado Gunicorn
+    Agregado plugin de heroku para django
+    Actualizada la version de Django a 1.8.19
+
+commit f55f35dd24ccd7134c47865f3618bb289745c2c8
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Fri Apr 13 00:48:05 2018 -0400
+
+    solving python issue
+
+commit 3006f93cfeb461f7efcb67f875913ef1160c9e4f
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Fri Apr 13 00:42:26 2018 -0400
+
+    solving python issue
+
+commit 52ba499233138fe0f1c3f16715b98cb14a8bb755
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Fri Apr 13 00:11:58 2018 -0400
+
+    solving python issue
+
+commit 0cf883ce476504adde47c52046355672bf40e322
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Fri Apr 13 00:03:54 2018 -0400
+
+    solving python issue
+
+commit 0f14898ff93dddd97c5289a707cd9fe8180f6258
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Thu Apr 12 23:46:37 2018 -0400
+
+    solving python issue
+
+commit df0411694bcae8ddca32fd8ee3a7d6a885d8ce55
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Thu Apr 12 23:41:09 2018 -0400
+
+    solving python issue
+
+commit 48b46c5b88b0895d148a823bc5940d30795d78c2
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Thu Apr 12 23:33:01 2018 -0400
+
+    solving python issue
+
+commit 98755a1b0c23d18442a1ce606d0da6a5f0b408b2
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Thu Apr 12 23:30:02 2018 -0400
+
+    solving python issue
+
+commit 911528ea0a95d95443309bfd3460be5727ffed69
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Thu Apr 12 23:17:14 2018 -0400
+
+    resolved issue with datetime
+
+commit 8657b9a53e750786b838b5bdc47e00a73d27dd7f
+Author: Emanuel Sánchez <emanuelsab@gmail.com>
+Date:   Fri Mar 30 14:09:28 2018 -0400
+
+    blog updated
+
+commit 5878be94851c196e79140c9a7be1226bfc98c11c
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sun Jan 22 03:55:59 2017 +0100
+
+    correcciones aldea
+
+commit de3c8ca3b52234eeda7de765ef09bb8f525096e6
+Author: guillen <oguillen@turpialdev.com>
+Date:   Mon Nov 28 04:38:47 2016 +0100
+
+    casi listo
+
+commit 1ddda5c8285590c5b844e1963e373c1e551f73e6
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sat Nov 26 23:30:31 2016 +0100
+
+    alimentos
+
+commit 2c5ee9342760bbfe2678b3f39f95740110d4572f
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Nov 25 14:20:04 2016 +0100
+
+    /
+
+commit cd9bd5b12a599efd5ca5c9810f6f54580f5ba35b
+Author: guillen <oguillen@turpialdev.com>
+Date:   Thu Nov 3 21:23:46 2016 +0100
+
+    doctos
+
+commit cf5c16588bf58e2de091387758c2d00ec4b35715
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sun Oct 9 23:05:16 2016 +0200
+
+    home
+
+commit c4c9e260aab8a17ca6299f3d75137a2d07c7e79e
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sun Aug 14 18:20:24 2016 -0400
+
+    fixing user login
+
+commit 174695df7ca888a07c512e87b6f267ad5d792bb2
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sun Aug 14 18:11:38 2016 -0400
+
+    user changes
+
+commit cb9d3b82117c44e106cb6ced5e514a06d9bfc7bf
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sun Aug 14 18:04:17 2016 -0400
+
+    ending user part 1
+
+commit e3fb11c3de9d2368fe8962141cde85af2d35e987
+Author: guillen <oguillen@turpialdev.com>
+Date:   Sun Aug 14 16:50:01 2016 -0400
+
+    new files
+
+commit 4eba5f3efca4e9e2783012337753cc3f15ba0776
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 03:25:46 2016 -0400
+
+    final heroku
+
+commit dca1e45a32b8a31b8d7378084b3459c7723006f7
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 02:55:21 2016 -0400
+
+    t
+    
+    reqs
+
+commit 8ce00477c493ed278db3596aee2662e4d9323342
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 02:41:16 2016 -0400
+
+    heroku app fix
+
+commit e08fc4d39378797d0d2cd064d37ca6728fd5a549
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 02:30:01 2016 -0400
+
+    heroku app
+
+commit fbb689582127b806af0610945e5222ac47917cc9
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 02:25:06 2016 -0400
+
+    heroku procfile and more
+
+commit 94d5798fb9e455aba5f9ef6c7107dde894672a25
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 02:20:34 2016 -0400
+
+    heroku procfile
+
+commit 9302e431a545f156a93556b854a661c796de6bbf
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 02:15:45 2016 -0400
+
+    commit 2
+
+commit f5a3b5e48a1b117266c2e4293c64a3c3a5560061
+Author: guillen <oguillen@turpialdev.com>
+Date:   Fri Aug 12 01:05:57 2016 -0400
+
+    first commit
+
+commit 0036345e6393bacaf976217aca54a735f0b21475
+Author: Oscar E. Guillen R <OssyGuillen@users.noreply.github.com>
+Date:   Fri Aug 12 00:54:54 2016 -0400
+
+    Initial commit

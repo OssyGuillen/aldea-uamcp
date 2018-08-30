@@ -24,8 +24,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 from cloudinary.forms import cl_init_js_callbacks
+import cloudinary.uploader
+import cloudinary
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.contrib.auth import logout
 
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
@@ -146,7 +149,8 @@ class NoticiaListView(ListView):
 @login_required 
 def eliminarNoticia(request, id):
     noticia = Noticia.objects.get(pk=id)
-    cloudinary.uploader.destroy(noticia.imagen.public_id,invalidate=True)
+    if (noticia.imagen.url): # Si existe imagen la borramos de cloduinary
+        cloudinary.uploader.destroy(noticia.imagen.public_id,invalidate=True)
     noticia.delete()
     return HttpResponseRedirect(reverse_lazy('noticias_list'))
     
@@ -165,10 +169,17 @@ class contactoView(generic.CreateView):
         #print('ENVIAR',msj,email,name)
         mensaje = 'Correo proveniente del blog http://unidadautismo.herokuapp.com \n\n'
         mensaje = mensaje + '\n\nEnviado por: ' + name + '\n\nEmail: ' + email + '\n\nMensaje: \n\n' + msj
-        envio = send_mail('[Mensaje del Blog]', mensaje, email, ['unidadautismomaternidadcom@gmail.com'], fail_silently=False)
+        envio = send_mail('[Mensaje del Blog]', mensaje, email, ['uautismomcp@gmail.com'], fail_silently=False)
         #print(envio)
         if (envio):
             messages.success(request, "Mensaje enviado correctamente!")
         else:
             messages.warning(request, 'Ha ocurrido un Error, su mensaje no se ha enviado')
         return render(request, self.template_name)
+        
+#Cerrar sesion
+
+@login_required 
+def cerrarSesion(request):
+    logout(request)
+    return HttpResponseRedirect('/noticias')

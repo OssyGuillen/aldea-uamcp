@@ -62,7 +62,12 @@ urlpatterns = [
     ),
     url(r'^contacto/$',
         contactoView.as_view(),
-        name='contacto')
+        name='contacto'),
+    url(
+        r'^noticia/cerrarsesion/$',
+        'blog.views.cerrarSesion',
+        name='cerrar-sesion'
+    )
 ] + staticfiles_urlpatterns()
 
 
